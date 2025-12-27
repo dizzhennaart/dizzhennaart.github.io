@@ -4,212 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dizz Henna Art | Professional Mehndi Artist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        /* CSS STYLES */
         :root {
-            --primary: #6B2D0E;
-            --accent: #D4AF37;
-            --bg: #FFFBF2;
-            --text: #2D2D2D;
+            --gold: #d4af37;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: var(--bg);
-            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
             line-height: 1.6;
         }
 
-        /* Navigation */
-        nav {
-            background: white;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .nav-links a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-        }
-
         /* Hero Section */
-        .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1590595906931-81f04f0ccebb?auto=format&fit=crop&q=80&w=1600');
-            background-size: cover;
-            background-position: center;
+        header {
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
             text-align: center;
-            padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1590548541251-17f16f9f60b4?auto=format&fit=crop&q=80&w=1600');
+            background-size: cover;
+            background-position: center;
         }
 
-        .hero h1 {
+        h1 {
+            font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
+            color: var(--gold);
             margin-bottom: 10px;
         }
 
-        .hero p {
+        .subtitle {
             font-size: 1.2rem;
-            margin-bottom: 25px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
-        .btn {
-            background: var(--accent);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: var(--primary);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 10%;
-            text-align: center;
+        /* Portfolio Gallery */
+        .gallery-container {
+            padding: 50px 10%;
         }
 
         .section-title {
-            color: var(--primary);
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .card h3 {
-            color: var(--primary);
-            margin: 15px 0;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 50px 10%;
             text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--gold);
         }
 
-        .footer-content {
+        .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: left;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 4/5;
+            background: #222;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer / Contact */
+        footer {
+            background: #111;
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid var(--gold);
+        }
+
+        .btn-contact {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gold);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Dizz Henna Art</div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+    <header>
+        <h1>Dizz Henna Art</h1>
+        <p class="subtitle">Exquisite Bridal & Traditional Mehndi</p>
+    </header>
 
-    <section class="hero" id="home">
-        <h1>Exquisite Mehndi Artistry</h1>
-        <p>Providing beautiful Henna designs in Madurai & Melur</p>
-        <a href="#contact" class="btn">Book an Appointment</a>
-    </section>
-
-    <section class="services" id="services">
-        <h2 class="section-title">Our Services</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1620577934751-872f232463e2?auto=format&fit=crop&q=60&w=400" alt="Wedding Mehndi">
-                <h3>Wedding Mehndi</h3>
-                <p>Intricate, full-hand bridal designs that tell your love story.</p>
+    <section class="gallery-container">
+        <h2 class="section-title">The Collection</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1610450949065-0f30559e7766?auto=format&fit=crop&q=80&w=600" alt="Bridal Mehndi">
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1619438260408-65f0a0673327?auto=format&fit=crop&q=60&w=400" alt="Modern Mehndi">
-                <h3>Modern Designs</h3>
-                <p>Minimalist and trendy patterns for the modern guest or bridesmaid.</p>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1596431940562-63205018e69d?auto=format&fit=crop&q=80&w=600" alt="Traditional Design">
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1590595906931-81f04f0ccebb?auto=format&fit=crop&q=60&w=400" alt="Arabic Mehndi">
-                <h3>Arabic Patterns</h3>
-                <p>Bold, flowing, and floral Arabic styles for any occasion.</p>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1617331140180-e8262094733a?auto=format&fit=crop&q=80&w=600" alt="Intricate Henna">
+            </div>
+            <div class="portfolio-item">
+                <img src="https://images.unsplash.com/photo-1614032120038-f9864299b823?auto=format&fit=crop&q=80&w=600" alt="Back Hand Design">
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <div>
-                <h3>Dizz Henna Art</h3>
-                <p>Professional Mehndi Services in Madurai and Melur.</p>
-                <p>Email: dizzhennaart@gmail.com</p>
-            </div>
-            <div>
-                <h3>Quick Links</h3>
-                <p>Instagram: [Link]</p>
-                <p>WhatsApp: [Number]</p>
-            </div>
-            <div>
-                <h3>Service Areas</h3>
-                <p>Madurai City</p>
-                <p>Melur & Surrounding Areas</p>
-            </div>
-        </div>
-        <hr style="margin-top: 30px; opacity: 0.3;">
-        <p>&copy; 2024 Dizz Henna Art. All rights reserved.</p>
+    <footer>
+        <p>Interested in professional Mehndi services?</p>
+        <a href="mailto:dizzhennaart@gmail.com" class="btn-contact">Book an Appointment</a>
+        <p style="margin-top:20px; font-size: 0.8rem; color: #666;">© 2024 Dizz Henna Art. All rights reserved.</p>
     </footer>
 
 </body>

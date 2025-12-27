@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About | Dizz Henna Art</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5efe6; /* sandal */
+      color: #4b3621; /* mild brown */
+    }
+
+    header {
+      background-color: #8b5e3c;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #d8c3a5;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #4b3621;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 25px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-text {
+      flex: 1 1 350px;
+    }
+
+    .about-text h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .about-images {
+      flex: 1 1 350px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .about-images img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      object-fit: cover;
+      height: 180px;
+      background-color: #e6d5c3; /* placeholder color */
+    }
+
+    footer {
+      background-color: #8b5e3c;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .about-content {
+        flex-direction: column;
+      }
+
+      .about-images {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>About Me</h1>
+    <p>Henna Artist • Mehndi Designer</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#">Templates</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Dizz Henna Art</h2>
+        <p>
+          I am a professional henna artist based in Madurai & Melur, specializing in bridal,
+          Arabic, traditional, and modern mehndi designs. My passion is to create elegant and unique
+          henna art that enhances every special occasion.
+        </p>
+        <p>
+          With years of experience, I focus on clean designs, natural henna, and long-lasting stain
+          quality. Each design is customized according to client preferences, making every artwork
+          special and personal.
+        </p>
+        <p>Available for weddings, festivals, engagements, and special events.</p>
+      </div>
+
+      <div class="about-images">
+        <!-- Replace src with your uploaded images -->
+        <img src="images/artist-portrait.jpg" alt="Henna Artist Portrait" />
+        <img src="images/henna-tools.jpg" alt="Henna Tools" />
+        <img src="images/henna-design1.jpg" alt="Henna Design 1" />
+        <img src="images/henna-design2.jpg" alt="Henna Design 2" />
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Dizz Henna Art | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
 

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en"><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,10 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <!-- Header Section -->
     <header>
         <div class="logo">
-            <img src="D:\Logo.png" alt="Dizz Henna Art Logo" class="logo-img"> <!-- Replace with your logo image path -->
+            <img src="Images/Logo.png" alt="Dizz Henna Art Logo" class="logo-img">
         </div>
         <nav>
             <ul>
@@ -26,46 +26,54 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-text">
-            <h2>Welcome to Dizz Henna Art</h2>
-            <p>Bringing beautiful, intricate henna designs to life for every occasion.</p>
-            <a href="#gallery" class="cta-button">View Gallery</a>
+        <div class="hero-content">
+            <h1>Elegant Henna Art for Every Occasion</h1>
+            <p>Transform your special moments with beautiful and intricate henna designs.</p>
+            <a href="#gallery" class="cta-button">View Our Gallery</a>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Us Section -->
     <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>Welcome to Dizz Henna Art! We specialize in creating beautiful, traditional, and modern henna designs. Whether it’s for a wedding, festival, or personal event, our art will make your moments unforgettable.</p>
+        <div class="about-content">
+            <h2>About Dizz Henna Art</h2>
+            <p>At Dizz Henna Art, we specialize in creating beautiful, custom henna designs for weddings, festivals, and all kinds of celebrations. Our unique approach blends traditional and modern styles, ensuring your henna design is perfect for every occasion.</p>
+        </div>
     </section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <h2>Gallery</h2>
-        <p>Check out some of our best henna designs:</p>
         <div class="gallery-images">
-            <img src="design1.jpg" alt="Henna Design 1">
-            <img src="design2.jpg" alt="Henna Design 2">
-            <img src="design3.jpg" alt="Henna Design 3">
+            <img src="Images/design1.jpeg" alt="Henna Design 1">
+            <img src="Images/design2.jpeg" alt="Henna Design 2">
+            <img src="Images/design3.jpeg" alt="Henna Design 3">
         </div>
+        <a href="#contact" class="cta-button">Book a Session</a>
     </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <h2>What Our Clients Say</h2>
-        <p>"Absolutely stunning! Dizz Henna Art made my event so much more special with their beautiful designs!" - Client A</p>
-        <p>"I loved the personalized henna for my wedding! Highly recommend!" - Client B</p>
+        <div class="testimonial">
+            <p>"Dizz Henna Art made my wedding even more special with their stunning designs! Highly recommended!" - Client A</p>
+        </div>
+        <div class="testimonial">
+            <p>"I loved the custom henna design for my birthday. Truly talented!" - Client B</p>
+        </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
-        <p>If you’d like to book a session or inquire about our services, feel free to reach out!</p>
+        <p>If you'd like to book a session or inquire about our services, please fill out the form below:</p>
         <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea><br>
             <button type="submit">Submit</button>
         </form>
     </section>
@@ -73,144 +81,6 @@
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Dizz Henna Art. All Rights Reserved.</p>
-    </footer>
-</body>
-</html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dizz Henna Art | Professional Mehndi Artist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold: #d4af37;
-            --dark: #1a1a1a;
-            --light: #f4f4f4;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--dark);
-            color: var(--light);
-            line-height: 1.6;
-        }
-
-        /* Hero Section */
-        header {
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1590548541251-17f16f9f60b4?auto=format&fit=crop&q=80&w=1600');
-            background-size: cover;
-            background-position: center;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: var(--gold);
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        /* Portfolio Gallery */
-        .gallery-container {
-            padding: 50px 10%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--gold);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            aspect-ratio: 4/5;
-            background: #222;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Footer / Contact */
-        footer {
-            background: #111;
-            padding: 40px;
-            text-align: center;
-            border-top: 1px solid var(--gold);
-        }
-
-        .btn-contact {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--gold);
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 25px;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Dizz Henna Art</h1>
-        <p class="subtitle">Exquisite Bridal & Traditional Mehndi</p>
-    </header>
-
-    <section class="gallery-container">
-        <h2 class="section-title">The Collection</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1610450949065-0f30559e7766?auto=format&fit=crop&q=80&w=600" alt="Bridal Mehndi">
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1596431940562-63205018e69d?auto=format&fit=crop&q=80&w=600" alt="Traditional Design">
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1617331140180-e8262094733a?auto=format&fit=crop&q=80&w=600" alt="Intricate Henna">
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1614032120038-f9864299b823?auto=format&fit=crop&q=80&w=600" alt="Back Hand Design">
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>Interested in professional Mehndi services?</p>
-        <a href="mailto:dizzhennaart@gmail.com" class="btn-contact">Book an Appointment</a>
-        <p style="margin-top:20px; font-size: 0.8rem; color: #666;">© 2024 Dizz Henna Art. All rights reserved.</p>
     </footer>
 
 </body>

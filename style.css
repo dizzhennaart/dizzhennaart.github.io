@@ -1,14 +1,52 @@
-* {
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3e2a47;
+    color: white;
+    padding: 20px;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                #7a2e2e;
-    height: 70vh;
+    background-image: url('Images/hero-image.jpeg'); /* Replace with your hero image */
+    background-size: cover;
+    background-position: center;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,96 +56,117 @@
 
 .hero h1 {
     font-size: 48px;
+    margin: 0;
 }
 
 .hero p {
-    margin: 15px 0;
-    font-size: 18px;
+    font-size: 20px;
 }
 
-.btn {
-    background-color: #f2c1a0;
-    padding: 12px 25px;
-    color: #4b1e1e;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.navbar {
-    background-color: #fff;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.navbar a {
-    margin: 15px;
-    text-decoration: none;
-    color: #7a2e2e;
-    font-weight: bold;
-}
-
-.section {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.section h2 {
-    margin-bottom: 20px;
-    color: #7a2e2e;
-}
-
-.bg-light {
-    background-color: #fff4ec;
-}
-
-.bg-dark {
-    background-color: #7a2e2e;
+.cta-button {
+    background-color: #d86a6a;
     color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
 }
 
-.cards {
+.cta-button:hover {
+    background-color: #c55c5c;
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.gallery-images {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
-.card {
-    background: white;
-    padding: 25px;
-    width: 280px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.gallery-images img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    max-width: 800px;
-    margin: auto;
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
 }
 
-.img-box {
-    background-color: #f2c1a0;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
+.testimonials h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
-.note {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #777;
+.testimonial {
+    margin: 20px 0;
+    font-style: italic;
 }
 
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.contact form {
+    display: inline-block;
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.contact form input, .contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #d86a6a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact form button:hover {
+    background-color: #c55c5c;
+}
+
+/* Footer Section */
 footer {
-    background-color: #4b1e1e;
+    padding: 20px;
+    background-color: #3e2a47;
     color: white;
     text-align: center;
-    padding: 15px;
 }

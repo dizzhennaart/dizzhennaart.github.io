@@ -1,45 +1,113 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
-    background-color: #fff8f2;
-    color: #333;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-header {
-    background-color: #8b3a3a;
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                #7a2e2e;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
-    padding: 20px;
     text-align: center;
 }
 
-nav {
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.btn {
     background-color: #f2c1a0;
-    padding: 10px;
-    text-align: center;
+    padding: 12px 25px;
+    color: #4b1e1e;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
-nav a {
-    margin: 10px;
+.navbar {
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+    margin: 15px;
     text-decoration: none;
-    color: #4b1e1e;
+    color: #7a2e2e;
     font-weight: bold;
 }
 
-section {
-    padding: 20px;
+.section {
+    padding: 50px 20px;
+    text-align: center;
 }
 
-h2 {
-    color: #8b3a3a;
+.section h2 {
+    margin-bottom: 20px;
+    color: #7a2e2e;
 }
 
-ul li {
-    margin: 8px 0;
+.bg-light {
+    background-color: #fff4ec;
+}
+
+.bg-dark {
+    background-color: #7a2e2e;
+    color: white;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    width: 280px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.img-box {
+    background-color: #f2c1a0;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.note {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #777;
 }
 
 footer {
-    background-color: #8b3a3a;
+    background-color: #4b1e1e;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
 }

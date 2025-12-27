@@ -1,146 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dizz Henna Art | Madurai, Melur</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Dizz Henna Art | Madurai, Melur</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+<!-- Font Awesome for Social Media Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #fffaf5;
-            color: #333;
-        }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
 
-        header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-            url("https://images.unsplash.com/photo-1599669454699-248893623440");
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:#fffaf5;
+}
 
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-        }
+/* HERO SECTION */
+.hero{
+    background:#3b1f1a;
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+}
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+}
+.hero p{
+    font-size:1.1rem;
+}
 
-        header p {
-            font-size: 1.2rem;
-        }
+/* INTRO SECTION */
+.intro{
+    display:flex;
+    flex-wrap:wrap;
+    padding:50px 20px;
+    max-width:1200px;
+    margin:auto;
+    gap:30px;
+}
+.intro img{
+    width:100%;
+    max-width:500px;
+    border-radius:10px;
+}
+.intro-content{
+    flex:1;
+}
+.intro-content h2{
+    color:#7a3b2e;
+}
+.read-more{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#7a3b2e;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
 
-        section {
-            padding: 60px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+/* SERVICES MARQUEE */
+.marquee{
+    background:#f3e3d8;
+    padding:20px 0;
+    overflow:hidden;
+}
+.marquee-content{
+    display:flex;
+    animation:scroll 15s linear infinite;
+}
+.marquee-content img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    margin-right:20px;
+    border-radius:10px;
+}
+@keyframes scroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+}
 
-        h2 {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #7a3b2e;
-        }
+/* SERVICES BOX */
+.services{
+    text-align:center;
+    padding:50px 20px;
+}
+.services h2{
+    font-family:'Playfair Display',serif;
+    color:#7a3b2e;
+}
+.services-box{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
 
-        .about, .services {
-            text-align: center;
-            font-size: 1.1rem;
-        }
+/* FOOTER */
+footer{
+    background:#3b1f1a;
+    color:white;
+    padding:40px 20px;
+}
+.footer-container{
+    display:flex;
+    flex-wrap:wrap;
+    max-width:1200px;
+    margin:auto;
+}
+.footer-left, .footer-right{
+    flex:1;
+    padding:10px;
+}
+.footer-left p{
+    font-size:0.95rem;
+}
+.social-icons a{
+    color:white;
+    margin-right:15px;
+    font-size:1.3rem;
+    text-decoration:none;
+}
+.footer-bottom{
+    text-align:center;
+    margin-top:20px;
+    font-size:0.85rem;
+}
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .contact {
-            background-color: #7a3b2e;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        footer {
-            background: #3b1f1a;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-
-        @media(max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+/* RESPONSIVE */
+@media(max-width:768px){
+    .intro{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <div>
-        <h1>Dizz Henna Art</h1>
-        <p>Professional Henna Artist<br>Madurai, Melur</p>
-    </div>
-</header>
+<!-- HERO -->
+<div class="hero">
+    <h1>Dizz Henna Art</h1>
+    <p>Managed by a Passionate College Girl<br>Madurai, Melur</p>
+</div>
 
-<section class="about">
-    <h2>About Us</h2>
-    <p>
-        Dizz Henna Art brings elegant and traditional henna designs to make your
-        special moments unforgettable. We specialize in bridal henna, festival
-        designs, and custom patterns with natural, skin-safe henna.
-    </p>
+<!-- INTRO -->
+<section class="intro">
+    <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6" alt="Applying Mehndi">
+    
+    <div class="intro-content">
+        <h2>Welcome to Dizz Henna Art</h2>
+        <p>
+            Dizz Henna Art is a creative mehndi service offering elegant bridal,
+            traditional, and Arabic henna designs. Each design is crafted with
+            love using natural henna to make your special occasions memorable.
+        </p>
+        <a href="about.html" class="read-more">Read More</a>
+    </div>
 </section>
 
+<!-- SERVICES MARQUEE -->
+<div class="marquee">
+    <div class="marquee-content">
+        <img src="https://images.unsplash.com/photo-1615873968403-89e068629265">
+        <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35">
+        <img src="https://images.unsplash.com/photo-1597326921112-0c7a7b45c76c">
+        <img src="https://images.unsplash.com/photo-1615873968403-89e068629265">
+        <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35">
+    </div>
+</div>
+
+<!-- SERVICES -->
 <section class="services">
     <h2>Our Services</h2>
-    <p>
-        ✦ Bridal Henna<br>
-        ✦ Engagement & Wedding Events<br>
-        ✦ Festival & Party Henna<br>
-        ✦ Custom Arabic & Indian Designs
-    </p>
-</section>
-
-<section>
-    <h2>Henna Gallery</h2>
-    <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1615873968403-89e068629265" alt="Henna Design">
-        <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35" alt="Bridal Henna">
-        <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6" alt="Arabic Henna">
-        <img src="https://images.unsplash.com/photo-1597326921112-0c7a7b45c76c" alt="Mehndi Art">
+    <div class="services-box">
+        ✦ Bridal Mehndi<br><br>
+        ✦ Engagement & Wedding Mehndi<br><br>
+        ✦ Festival & Party Mehndi<br><br>
+        ✦ Arabic & Traditional Indian Designs
     </div>
 </section>
 
-<section class="contact">
-    <h2>Contact Us</h2>
-    <p>
-        📍 Madurai, Melur<br>
-        📞 Call / WhatsApp for Bookings<br>
-        ✉️ dizzhennaart@gmail.com
-    </p>
-</section>
-
+<!-- FOOTER -->
 <footer>
-    © 2025 Dizz Henna Art | Designed with ❤
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>Dizz Henna Art</h3>
+            <p>
+                We specialize in elegant mehndi designs for all occasions.
+                Our passion is to bring beauty and tradition together through henna art.
+            </p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/dizz_henna_art" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@dizz_henna_art" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:dizzhennaart@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <h3>Contact Details</h3>
+            <p>
+                📍 Madurai, Melur<br>
+                📧 dizzhennaart@gmail.com<br>
+                📸 Instagram: dizz_henna_art<br>
+                ▶️ YouTube: dizz_henna_art
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Dizz Henna Art. All Rights Reserved.
+    </div>
 </footer>
 
 </body>

@@ -2,154 +2,145 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dizz Henna Art | Mehandhi Artist in Madurai, Melur</title>
+    <title>Dizz Henna Art | Madurai, Melur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background-color: #f5efe6; /* sandal */
-            color: #4b3621; /* mild brown */
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffaf5;
+            color: #333;
         }
 
         header {
-            background-color: #8b5e3c; /* brown */
-            color: #fff;
-            padding: 30px 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url("https://images.unsplash.com/photo-1599669454699-248893623440");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 36px;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
         }
 
         header p {
-            margin-top: 10px;
-            font-size: 16px;
+            font-size: 1.2rem;
         }
 
-        nav {
-            background-color: #d8c3a5; /* light sandal */
-            padding: 12px;
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
             text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #7a3b2e;
         }
 
-        nav a {
-            color: #4b3621;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            padding: 40px 25px;
-        }
-
-        .section-title {
+        .about, .services {
             text-align: center;
-            font-size: 28px;
-            margin-bottom: 30px;
+            font-size: 1.1rem;
         }
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
         }
 
-        .card {
-            background-color: #fffaf3;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
-        }
-
-        .card img {
+        .gallery img {
             width: 100%;
-            height: 220px;
+            height: 300px;
             object-fit: cover;
-            border-radius: 8px;
-            background-color: #e6d5c3; /* placeholder color */
+            border-radius: 10px;
         }
 
-        .card h3 {
-            margin: 15px 0 8px;
-        }
-
-        .card p {
-            font-size: 14px;
+        .contact {
+            background-color: #7a3b2e;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
         }
 
         footer {
-            background-color: #8b5e3c;
+            background: #3b1f1a;
             color: white;
             text-align: center;
             padding: 15px;
-            margin-top: 40px;
+        }
+
+        @media(max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
-
 <body>
 
 <header>
-    <h1>Dizz Henna Art</h1>
-    <p>Elegant • Traditional • Modern Mehndi Designs</p>
+    <div>
+        <h1>Dizz Henna Art</h1>
+        <p>Professional Henna Artist<br>Madurai, Melur</p>
+    </div>
 </header>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="about.html">Templates</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-</nav>
+<section class="about">
+    <h2>About Us</h2>
+    <p>
+        Dizz Henna Art brings elegant and traditional henna designs to make your
+        special moments unforgettable. We specialize in bridal henna, festival
+        designs, and custom patterns with natural, skin-safe henna.
+    </p>
+</section>
 
-<div class="container">
+<section class="services">
+    <h2>Our Services</h2>
+    <p>
+        ✦ Bridal Henna<br>
+        ✦ Engagement & Wedding Events<br>
+        ✦ Festival & Party Henna<br>
+        ✦ Custom Arabic & Indian Designs
+    </p>
+</section>
 
-    <h2 class="section-title">Henna Templates</h2>
-
+<section>
+    <h2>Henna Gallery</h2>
     <div class="gallery">
-
-        <!-- TEMPLATE 1 -->
-        <div class="card">
-            <img src="https://en.wikipedia.org/wiki/Mehndi#/media/File:Mehndi_front.JPG" alt="Henna Design">
-            <h3>Bridal Henna</h3>
-            <p>Perfect for weddings</p>
-        </div>
-
-        <!-- TEMPLATE 2 -->
-        <div class="card">
-            <img src="" alt="Upload Henna Design">
-            <h3>Arabic Style</h3>
-            <p>Bold and beautiful patterns</p>
-        </div>
-
-        <!-- TEMPLATE 3 -->
-        <div class="card">
-            <img src="" alt="Upload Henna Design">
-            <h3>Minimal Henna</h3>
-            <p>Simple and elegant designs</p>
-        </div>
-
-        <!-- TEMPLATE 4 -->
-        <div class="card">
-            <img src="" alt="Upload Henna Design">
-            <h3>Festival Henna</h3>
-            <p>Trendy and modern looks</p>
-        </div>
-
+        <img src="https://images.unsplash.com/photo-1615873968403-89e068629265" alt="Henna Design">
+        <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35" alt="Bridal Henna">
+        <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6" alt="Arabic Henna">
+        <img src="https://images.unsplash.com/photo-1597326921112-0c7a7b45c76c" alt="Mehndi Art">
     </div>
+</section>
 
-</div>
+<section class="contact">
+    <h2>Contact Us</h2>
+    <p>
+        📍 Madurai, Melur<br>
+        📞 Call / WhatsApp for Bookings<br>
+        ✉️ dizzhennaart@gmail.com
+    </p>
+</section>
 
 <footer>
-    <p>© 2025 Henna Art | All Rights Reserved</p>
+    © 2025 Dizz Henna Art | Designed with ❤
 </footer>
 
 </body>

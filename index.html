@@ -93,22 +93,36 @@
             font-size: 30px;
         }
 
-        .services {
-            background-color: #fff5e1;
-            padding: 40px 20px;
-            text-align: center;
-        }
+.services {
+    background-color: #fff5e1;
+    padding: 40px 20px;
+    text-align: center;
+}
 
-        .service-box {
-            display: inline-block;
-            background-color: #f5e6d3;
-            padding: 20px;
-            margin: 10px;
-            width: 260px;
-            border-radius: 10px;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+.service-box {
+    display: inline-block;
+    background-color: #f5e6d3;
+    padding: 15px;
+    margin: 12px;
+    width: 260px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+.service-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.service-box p {
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4b2e1f;
+}
+
 
         .location {
             padding: 30px 20px;
@@ -172,10 +186,23 @@
 
 <section class="services">
     <h3>Our Services</h3>
-    <div class="service-box">Arabic Mehandhi</div>
-    <div class="service-box">Wedding Mehandhi</div>
-    <div class="service-box">Special Function Mehandhi</div>
+
+    <div class="service-box">
+        <img src="Images/arabic.jpg" alt="Arabic Mehandhi">
+        <p>Arabic Mehandhi</p>
+    </div>
+
+    <div class="service-box">
+        <img src="Images/wedding.jpg" alt="Wedding Mehandhi">
+        <p>Wedding Mehandhi</p>
+    </div>
+
+    <div class="service-box">
+        <img src="Images/function.jpg" alt="Special Function Mehandhi">
+        <p>Special Function Mehandhi</p>
+    </div>
 </section>
+
 
 <section class="location">
     <h3>Service Location</h3>

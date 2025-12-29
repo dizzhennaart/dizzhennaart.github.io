@@ -6,30 +6,27 @@
     <!-- SEO Meta Tags -->
     <title>Dizz Henna Art | Professional Mehandhi Artist in Melur, Madurai</title>
     <meta name="description" content="Dizz Henna Art offers professional Arabic, wedding and special function mehandhi services in Melur and Madurai. Beautiful natural henna designs for every occasion.">
-    <meta name="keywords" content="Dizz Henna Art, Mehandhi Artist in Melur, Henna Artist Madurai, Bridal Mehandhi, Arabic Mehandhi, Wedding Henna">
+    <meta name="keywords" content="Dizz Henna Art, Mehandhi Artist in Melur, Henna Artist Madurai, Bridal Mehandhi, Arabic Mehandhi">
     <meta name="author" content="Dizz Henna Art">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-    <!-- Style -->
     <style>
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            background-color: #f5e6d3; /* Sandal */
-            color: #4b2e1f; /* Brown */
+            background-color: #f5e6d3;
+            color: #4b2e1f;
         }
 
         header {
             background-color: #6f4e37;
-            padding: 25px;
+            padding: 20px;
             text-align: center;
         }
 
         header h1 {
             color: #fff5e1;
             margin: 0;
-            font-size: 34px;
         }
 
         header p {
@@ -50,24 +47,50 @@
             font-weight: bold;
         }
 
-        nav a:hover {
-            text-decoration: underline;
+        /* ===== Banner Image ===== */
+        .banner {
+            width: 100%;
+            height: 420px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(0,0,0,0.4);
+            padding: 20px 30px;
+            border-radius: 12px;
+        }
+
+        .banner-text h2 {
+            color: #fff5e1;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .banner-text p {
+            color: #f5e6d3;
+            font-size: 18px;
+            margin-top: 8px;
         }
 
         .hero {
-            padding: 50px 20px;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        .hero h2 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 650px;
-            margin: auto;
+        .hero h3 {
+            font-size: 30px;
         }
 
         .services {
@@ -76,41 +99,20 @@
             text-align: center;
         }
 
-        .services h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
         .service-box {
             display: inline-block;
             background-color: #f5e6d3;
             padding: 20px;
             margin: 10px;
             width: 260px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+            border-radius: 10px;
             font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .location {
-            padding: 40px 20px;
+            padding: 30px 20px;
             text-align: center;
-        }
-
-        .location h3 {
-            font-size: 26px;
-        }
-
-        .gallery {
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .gallery img {
-            width: 250px;
-            margin: 10px;
-            border-radius: 10px;
-            border: 4px solid #8b5e3c;
         }
 
         footer {
@@ -121,19 +123,15 @@
             font-size: 14px;
         }
 
-        .btn {
-            background-color: #6f4e37;
-            color: #fff5e1;
-            padding: 12px 28px;
-            border: none;
-            border-radius: 30px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 25px;
-        }
+        /* Mobile Friendly */
+        @media (max-width: 768px) {
+            .banner {
+                height: 260px;
+            }
 
-        .btn:hover {
-            background-color: #8b5e3c;
+            .banner-text h2 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -142,7 +140,7 @@
 
 <header>
     <h1>Dizz Henna Art</h1>
-    <p>Professional Mehandhi Artist in Melur & Madurai</p>
+    <p>Mehandhi Artist | Melur & Madurai</p>
 </header>
 
 <nav>
@@ -152,13 +150,23 @@
     <a href="#">Contact</a>
 </nav>
 
+<!-- ===== Banner Image Section ===== -->
+<section class="banner">
+    <img src="cover_02.jpg">
+    <div class="banner-text">
+        <h2>Elegant Mehandhi Designs</h2>
+        <p>•Arabic
+            • Wedding 
+            • Special Functions</p>
+    </div>
+</section>
+
 <section class="hero">
-    <h2>Elegant & Traditional Mehandhi Designs</h2>
+    <h3>Welcome to Dizz Henna Art</h3>
     <p>
-        Dizz Henna Art provides beautiful, natural brown henna designs for weddings,
-        special functions, and festive occasions. We specialize in Arabic and bridal mehandhi.
+        We specialize in beautiful Arabic, wedding and special function mehandhi designs
+        using natural brown henna. Serving Melur and Madurai.
     </p>
-    <button class="btn">Book Your Mehandhi</button>
 </section>
 
 <section class="services">
@@ -170,18 +178,11 @@
 
 <section class="location">
     <h3>Service Location</h3>
-    <p>Serving <strong>Melur</strong> and <strong>Madurai</strong></p>
-</section>
-
-<section class="gallery">
-    <h3>Our Mehandhi Work</h3>
-    <img src="Images/design1.jpg" alt="Arabic Mehandhi Design">
-    <img src="Images/design2.jpg" alt="Wedding Mehandhi Design">
-    <img src="Images/design3.jpg" alt="Special Function Mehandhi">
+    <p>Serving Melur & Madurai</p>
 </section>
 
 <footer>
-    <p>© 2025 Dizz Henna Art | Mehandhi Artist in Melur & Madurai</p>
+    <p>© 2025 Dizz Henna Art | All Rights Reserved</p>
 </footer>
 
 </body>

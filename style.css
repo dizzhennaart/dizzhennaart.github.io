@@ -43,7 +43,7 @@ header nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background-image: url('Images/hero-image.jpeg'); /* Replace with your hero image */
+    background-image: url('cover_02.jpg'); /* Replace with your hero image */
     background-size: cover;
     background-position: center;
     height: 500px;

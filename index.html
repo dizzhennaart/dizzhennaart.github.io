@@ -132,64 +132,83 @@
 
 /* Footer Base */
 .footer {
-  background: linear-gradient(135deg, #6f4a32, #8a5e3c);
+  position: relative;
+  background: url("../images/footer-bg.jpg") center center / cover no-repeat;
   color: #f5e6d3;
-  padding: 60px 0 30px;
+  padding: 70px 0 30px;
+  overflow: hidden;
 }
 
 
-.footer-section.about .footer-logo {
-  font-size: 28px;
-  font-weight: 700;
-  color: #f5e6d3;
-  margin-bottom: 12px;
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(111, 74, 50, 0.92),
+    rgba(138, 94, 60, 0.92)
+  );
+  z-index: 1;
 }
 
-.footer-section.about p {
-  line-height: 1.7;
-  font-size: 15px;
+
+        
+
+.footer .container,
+.footer .footer-section {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  color: #d6b27c;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.footer-section h3::after {
+  content: "";
+  width: 35px;
+  height: 2px;
+  background: #d6b27c;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+}
+
+        .footer-section a {
   color: #f5e6d3;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section a:hover {
+  color: #d6b27c;
+  padding-left: 4px;
 }
 
 
 /* Social Icons */
-.socials a {
+.footer-socials a {
+  width: 36px;
+  height: 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: 12px;
+  border-radius: 50%;
   background: #d6b27c;
   color: #6f4a32;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  font-size: 16px;
+  margin-left: 8px;
   transition: 0.3s;
 }
 
-.socials a:hover {
+.footer-socials a:hover {
   background: #f5e6d3;
-  color: #6f4a32;
   transform: translateY(-3px);
 }
 
 
-/* Quick Links */
-.footer-section.links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section.links li {
-  margin-bottom: 10px;
-}
-
-.footer-section.links a {
-  text-decoration: none;
-  color: #f5e6d3;
-  font-size: 15px;
-  transition: 0.3s;
-}
 
 .footer-section.links a:hover {
   color: #d6b27c;
@@ -198,46 +217,28 @@
 
 
 /* Contact Info */
-.footer-section.contact p {
-  margin: 8px 0;
-  font-size: 15px;
-  color: #f5e6d3;
+.footer-map iframe {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  border: 2px solid #d6b27c;
 }
-
 
 /* Map */
-.footer-section.map iframe {
+.footer-map iframe {
   width: 100%;
-  height: 160px;
-  border: 2px solid #d6b27c;
+  height: 180px;
   border-radius: 10px;
+  border: 2px solid #d6b27c;
 }
 
 
-/* Footer Headings */
-.footer-section h3 {
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #d6b27c;
-  position: relative;
-}
-
-.footer-section h3::after {
-  content: "";
-  width: 40px;
-  height: 2px;
-  background: #d6b27c;
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-}
-
-
-        .footer-bottom {
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 15px;
   text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(245, 230, 211, 0.3);
   font-size: 14px;
+  border-top: 1px solid rgba(245, 230, 211, 0.3);
   color: #f5e6d3;
 }
 
@@ -315,53 +316,87 @@
     <p>Serving Melur & Madurai</p>
 </section>
 
-<footer>
-    <footer class="footer">
-  <div class="inner-footer">
+<footer class="footer">
+  <div class="container">
 
-    <!-- Logo + Text -->
-    <div class="footer-section about">
-      <h2 class="footer-logo">dizzhennaart</h2>
-      <p>Bringing quality digital experiences with creativity and style.</p>
-      <div class="socials">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+    <!-- TOP ROW -->
+    <div class="footer-top">
+      
+      <!-- LOGO -->
+      <div class="footer-brand">
+        <h2>Dizz Henna Art</h2>
+        <p>Mehandhi Artist | Melur & Madurai</p>
       </div>
+
+      <!-- SOCIALS -->
+      <div class="footer-socials">
+        <span>Follow Our Socials</span>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+
     </div>
 
-    <!-- Quick Links -->
-    <div class="footer-section links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="index.html">› Home</a></li>
-        <li><a href="about.html">› About</a></li>
-        <li><a href="projects.html">› Projects</a></li>
-        <li><a href="contact.html">› Contact</a></li>
-      </ul>
+    <hr>
+
+    <!-- MAIN CONTENT -->
+    <div class="footer-grid">
+
+      <!-- INFORMATION -->
+      <div class="footer-section">
+        <h3>Information</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- SERVICES -->
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li>Bridal Mehndi</li>
+          <li>Arabic Mehndi</li>
+          <li>Engagement Mehndi</li>
+          <li>Baby Shower Mehndi</li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+
+        <p><i class="fas fa-phone"></i> +91 94429 10175</p>
+        <p><i class="fas fa-envelope"></i> dizzhenna@gmail.com</p>
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          Melur & Madurai, Tamil Nadu
+        </p>
+      </div>
+
+      <!-- MAP -->
+      <div class="footer-section footer-map">
+        <h3>Location</h3>
+        <iframe
+          src="https://www.google.com/maps?q=Madurai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+
     </div>
 
-    <!-- Contact Info -->
-    <div class="footer-section contact">
-      <h3>Contact Info</h3>
-      <p><i class="fas fa-phone"></i> +974 4418 8611</p>
-      <p><i class="fas fa-envelope"></i> yourmail@example.com</p>
-      <p><i class="fas fa-map-marker-alt"></i> Qatar, Doha</p>
-    </div>
-
-    <!-- Map -->
-    <div class="footer-section map">
-      <h3>Locate Us</h3>
-      <iframe
-        src="https://www.google.com/maps?q=Doha%20Qatar&output=embed"
-        loading="lazy"
-      ></iframe>
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+      Designed & Maintained with care | Cbra India
     </div>
 
   </div>
-         <p style = "text-align: center;">© 2025 Dizz Henna Art | All Rights Reserved</p>
 </footer>
+
 
 
 </body>

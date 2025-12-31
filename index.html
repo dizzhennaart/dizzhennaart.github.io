@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+
     <!-- SEO Meta Tags -->
     <title>Dizz Henna Art | Professional Mehandhi Artist in Melur, Madurai</title>
     <meta name="description" content="Dizz Henna Art offers professional Arabic, wedding and special function mehandhi services in Melur and Madurai. Beautiful natural henna designs for every occasion.">
@@ -130,19 +131,21 @@
             text-align: center;
         }
 
+/* FOOTER BASE */
 .footer {
   position: relative;
   background: url("../images/footer-bg.jpg") center/cover no-repeat;
   color: #f5e6d3;
-  padding: 60px 0 25px;
+  padding: 35px 0 15px;
+  font-family: Arial, sans-serif;
 }
 
 .footer-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    rgba(111, 74, 50, 0.92),
-    rgba(138, 94, 60, 0.92)
+    rgba(111, 74, 50, 0.95),
+    rgba(138, 94, 60, 0.95)
   );
   z-index: 1;
 }
@@ -150,6 +153,9 @@
 .footer .container {
   position: relative;
   z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
 }
 
 /* TOP BAR */
@@ -157,23 +163,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .footer-logo h2 {
-  margin: 0;
-  font-size: 28px;
+  margin: 0 0 4px;
+  font-size: 26px;
   color: #f5e6d3;
 }
 
-.footer-logo span {
-  font-size: 14px;
+.footer-logo p {
+  margin: 0;
+  font-size: 13px;
   color: #d6b27c;
 }
 
 .footer-socials span {
-  margin-right: 10px;
-  font-size: 14px;
+  font-size: 13px;
+  margin-right: 8px;
 }
 
 .footer-socials a {
@@ -194,67 +200,84 @@
   transform: translateY(-3px);
 }
 
+/* DIVIDER */
 .footer-line {
   height: 1px;
   background: rgba(245, 230, 211, 0.3);
-  margin: 25px 0;
+  margin: 15px 0;
 }
 
 /* GRID */
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 20px;
 }
 
+/* SECTIONS */
 .footer-section h3 {
   color: #d6b27c;
-  margin-bottom: 15px;
-  font-size: 18px;
+  margin-bottom: 10px;
+  font-size: 17px;
 }
 
 .footer-section ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-section ul li {
-  margin-bottom: 8px;
-  font-size: 15px;
+  margin-bottom: 6px;
+  font-size: 14.5px;
 }
 
-.footer-section a {
+.footer-section ul li a {
   color: #f5e6d3;
   text-decoration: none;
-  transition: 0.3s;
 }
 
-.footer-section a:hover {
+.footer-section ul li a:hover {
   color: #d6b27c;
-  padding-left: 4px;
 }
 
 .footer-section p {
-  margin: 8px 0;
-  font-size: 15px;
+  margin: 6px 0;
+  font-size: 14.5px;
+  line-height: 1.4;
 }
 
 /* MAP */
 .footer-map iframe {
   width: 100%;
-  height: 170px;
+  height: 140px;
   border-radius: 8px;
   border: 2px solid #d6b27c;
 }
 
 /* BOTTOM */
 .footer-bottom {
-  margin-top: 35px;
-  padding-top: 15px;
+  margin-top: 15px;
+  padding-top: 10px;
   text-align: center;
-  font-size: 14px;
+  font-size: 13.5px;
   border-top: 1px solid rgba(245, 230, 211, 0.3);
 }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
 
 
 
@@ -330,16 +353,17 @@
     <p>Serving Melur & Madurai</p>
 </section>
 
+<!-- FOOTER START -->
 <footer class="footer">
   <div class="footer-overlay"></div>
 
   <div class="container">
 
-    <!-- TOP BAR -->
+    <!-- TOP -->
     <div class="footer-top">
       <div class="footer-logo">
         <h2>Dizz Henna Art</h2>
-        <span>Mehandhi Artist | Melur & Madurai</span>
+        <p>Mehandhi Artist | Melur & Madurai</p>
       </div>
 
       <div class="footer-socials">
@@ -352,18 +376,18 @@
 
     <div class="footer-line"></div>
 
-    <!-- MAIN GRID -->
+    <!-- CONTENT -->
     <div class="footer-grid">
 
       <!-- INFORMATION -->
       <div class="footer-section">
         <h3>Information</h3>
         <ul>
-          <li><a href="#">› Home</a></li>
-          <li><a href="#">› About</a></li>
-          <li><a href="#">› Services</a></li>
-          <li><a href="#">› Gallery</a></li>
-          <li><a href="#">› Contact</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </div>
 
@@ -371,10 +395,10 @@
       <div class="footer-section">
         <h3>Services</h3>
         <ul>
-          <li>› Bridal Mehndi</li>
-          <li>› Arabic Mehndi</li>
-          <li>› Engagement Mehndi</li>
-          <li>› Baby Shower Mehndi</li>
+          <li>Bridal Mehndi</li>
+          <li>Arabic Mehndi</li>
+          <li>Engagement Mehndi</li>
+          <li>Baby Shower Mehndi</li>
         </ul>
       </div>
 
@@ -383,10 +407,7 @@
         <h3>Contact Us</h3>
         <p><i class="fas fa-phone"></i> +91 94429 10175</p>
         <p><i class="fas fa-envelope"></i> dizzhenna@gmail.com</p>
-        <p>
-          <i class="fas fa-map-marker-alt"></i>
-          Melur & Madurai, Tamil Nadu
-        </p>
+        <p><i class="fas fa-map-marker-alt"></i> Melur & Madurai, Tamil Nadu</p>
       </div>
 
       <!-- MAP -->
@@ -406,6 +427,8 @@
 
   </div>
 </footer>
+<!-- FOOTER END -->
+
 
 
 

@@ -46,45 +46,49 @@
             margin-top: 3px;
         }
 
-        nav {
-            background-color: #8b5e3c;
-            padding: 10px;
-            text-align: center;
-        }
+/* Navigation Bar */
+.main-nav {
+    background-color: #8b5e3c; /* lighter brown */
+}
 
-        nav a {
-            color: #fff5e1;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+/* Main Menu */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
 
-
-		/* Parent menu item */
-.has-dropdown {
+.main-nav ul li {
     position: relative;
 }
 
-/* Main link */
-.has-dropdown > a {
+/* Main Menu Links */
+.main-nav ul li a {
     color: #ffffff;
     text-decoration: none;
+    font-size: 15px;
     padding: 10px 0;
     display: inline-block;
-    font-size: 15px;
 }
 
-/* Dropdown box */
-.has-dropdown .dropdown {
+/* Hover underline */
+.main-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown Menu */
+.dropdown {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     background-color: #6b4a32; /* dark brown */
-    min-width: 220px;
-    padding: 8px 0;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-    z-index: 1000;
+    min-width: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999;
 }
 
 /* Show dropdown on hover */
@@ -92,18 +96,17 @@
     display: block;
 }
 
-/* Dropdown links */
-.has-dropdown .dropdown li a {
-    display: block;
+/* Dropdown Links */
+.dropdown li a {
     padding: 12px 20px;
+    display: block;
     color: #f2e6d8;
     font-size: 14px;
-    text-decoration: none;
 }
 
-/* Hover effect */
-.has-dropdown .dropdown li a:hover {
-    background-color: #8b5e3c; /* lighter brown */
+/* Dropdown hover */
+.dropdown li a:hover {
+    background-color: #8b5e3c;
 }
 
         /* ===== Banner Image ===== */
@@ -379,10 +382,13 @@
     <p>Mehandhi Artist | Melur & Madurai</p>
 </header>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="about.html">About</a>
-            <li class="has-dropdown">
+<nav class="main-nav">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+
+        <!-- Services Dropdown -->
+        <li class="has-dropdown">
             <a href="#">Services ▾</a>
             <ul class="dropdown">
                 <li><a href="#">Arabic</a></li>
@@ -390,9 +396,12 @@
                 <li><a href="#">Special Functions</a></li>
             </ul>
         </li>
-    <a href="#">Gallery</a>
-    <a href="#">Contact</a>
+
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
 </nav>
+
 
 
 	

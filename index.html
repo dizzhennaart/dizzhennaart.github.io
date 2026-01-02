@@ -59,6 +59,53 @@
             font-weight: bold;
         }
 
+
+		/* Parent menu item */
+.has-dropdown {
+    position: relative;
+}
+
+/* Main link */
+.has-dropdown > a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 0;
+    display: inline-block;
+    font-size: 15px;
+}
+
+/* Dropdown box */
+.has-dropdown .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #6b4a32; /* dark brown */
+    min-width: 220px;
+    padding: 8px 0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.has-dropdown:hover .dropdown {
+    display: block;
+}
+
+/* Dropdown links */
+.has-dropdown .dropdown li a {
+    display: block;
+    padding: 12px 20px;
+    color: #f2e6d8;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* Hover effect */
+.has-dropdown .dropdown li a:hover {
+    background-color: #8b5e3c; /* lighter brown */
+}
+
         /* ===== Banner Image ===== */
         .banner {
             width: 100%;
@@ -335,11 +382,20 @@
 <nav>
     <a href="#">Home</a>
     <a href="about.html">About</a>
-    <a href="#">Services</a>
+            <li class="has-dropdown">
+            <a href="#">Services ▾</a>
+            <ul class="dropdown">
+                <li><a href="#">Arabic</a></li>
+                <li><a href="#">Wedding</a></li>
+                <li><a href="#">Special Functions</a></li>
+            </ul>
+        </li>
     <a href="#">Gallery</a>
     <a href="#">Contact</a>
 </nav>
 
+
+	
 <!-- ===== Banner Image Section ===== -->
 <section class="banner">
     <img src="cover_02.jpg">

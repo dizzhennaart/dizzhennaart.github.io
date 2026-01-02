@@ -96,14 +96,30 @@
             margin-top: 8px;
         }
 
-        .hero {
-            padding: 40px 20px;
-            text-align: center;
-        }
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px;
+    background-color: #f7e8d6;
+}
 
-        .hero h3 {
-            font-size: 30px;
-        }
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.hero-content h3 {
+    color: #6b2f14;
+    font-size: 28px;
+}
+
+.hero-content p {
+    color: #5a3a2a;
+    line-height: 1.6;
+}
+
 
 .services {
     background-color: #fff5e1;
@@ -300,6 +316,11 @@
             .banner-text h2 {
                 font-size: 24px;
             }
+
+			    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
         }
     </style>
 </head>
@@ -331,12 +352,19 @@
 </section>
 
 <section class="hero">
-    <h3>Welcome to Dizz Henna Art</h3>
-    <p>
-        We specialize in beautiful Arabic, wedding and special function mehandhi designs
-        using natural brown henna. Serving Melur and Madurai.
-    </p>
+    <div class="hero-image">
+        <img src="images/henna.jpg" alt="Henna Art">
+    </div>
+
+    <div class="hero-content">
+        <h3>Welcome to Dizz Henna Art</h3>
+        <p>
+            We specialize in beautiful Arabic, wedding and special function mehandhi designs
+            using natural brown henna. Serving Melur and Madurai.
+        </p>
+    </div>
 </section>
+
 
 <section class="services">
     <h3>Our Services</h3>

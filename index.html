@@ -46,60 +46,64 @@
             margin-top: 3px;
         }
 
-/* Navigation Bar */
-.main-nav {
-    background-color: #8b5e3c; /* lighter brown */
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Main Menu */
-.main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+/* Styling for the navigation */
+nav {
+  background-color: #6f4f28; /* Your theme color */
+  font-family: Arial, sans-serif;
 }
 
-.main-nav ul li {
-    position: relative;
+ul {
+  list-style: none;
+  display: flex;
+  padding: 10px;
 }
 
-/* Main Menu Links */
-.main-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 15px;
-    padding: 10px 0;
-    display: inline-block;
+ul li {
+  position: relative;
 }
 
-
-/* Dropdown Menu */
-.dropdown {
-    display: none;
-    position: absolute;
-	padding: 10px;
-    top: 100%;
-    left: 0;
-    background-color: #6b4a32; /* dark brown */
-    min-width: 200px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    z-index: 999;
-}
-		.services:hover .dropdown {
+a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
   display: block;
 }
 
-
-/* Dropdown Links */
-.dropdown li a {
-    padding: 12px 20px;
-    display: block;
-    color: #f2e6d8;
-    font-size: 14px;
+a:hover {
+  background-color: #9e7b51; /* Hover effect on links */
 }
 
+/* Dropdown menu hidden by default */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #6f4f28;
+  padding: 10px 0;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Show submenu when hovering over Services */
+.services:hover .submenu {
+  display: block;
+}
+
+/* Styling the submenu links */
+.submenu li {
+  padding: 8px 20px;
+}
+
+.submenu li a:hover {
+  background-color: #9e7b51; /* Hover effect inside the dropdown */
+}
 
         /* ===== Banner Image ===== */
         .banner {
@@ -374,25 +378,23 @@
     <p>Mehandhi Artist | Melur & Madurai</p>
 </header>
 
-<nav class="main-nav">
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-
-        <!-- Services Dropdown -->
-        <li class="has-dropdown">
-            <a href="#">Services ▾</a>
-            <ul class="dropdown">
-                <li><a href="#">Arabic</a></li>
-                <li><a href="#">Wedding</a></li>
-                <li><a href="#">Special Functions</a></li>
-            </ul>
-        </li>
-
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
+	<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li class="services">
+      <a href="#">Services</a>
+      <ul class="submenu">
+        <li><a href="#">Arabic</a></li>
+        <li><a href="#">Wedding</a></li>
+        <li><a href="#">Special Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
 </nav>
+
 
 
 

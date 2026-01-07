@@ -53,52 +53,63 @@
   box-sizing: border-box;
 }
 
-/* Styling for the navigation */
-nav {
-  background-color: #6f4f28; /* Your theme color */
-  font-family: Arial, sans-serif;
+.navbar {
+  background-color: #6b4a2d;
+  padding: 10px 40px;
 }
 
-ul {
+.menu {
   list-style: none;
   display: flex;
-  padding: 10px;
+  gap: 30px;
 }
 
-ul li {
+.menu li {
   position: relative;
 }
 
-a {
+.menu a {
   color: #fff;
   text-decoration: none;
-  padding: 10px 20px;
+  font-size: 16px;
+  padding: 10px 0;
   display: block;
 }
 
-a:hover {
-  background-color: #9e7b51; /* Hover effect on links */
-}
-
-/* Dropdown menu hidden by default */
+/* Submenu */
 .submenu {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #6f4f28;
-  padding: 10px 0;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  background-color: #7a5432;
+  min-width: 200px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  border-radius: 4px;
+  z-index: 1000;
 }
 
-/* Show submenu when hovering over Services */
-.services:hover .submenu {
-  display: block;
-}
-
-/* Styling the submenu links */
 .submenu li {
-  padding: 8px 20px;
+  border-bottom: 1px solid #8b623e;
+}
+
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+.submenu a {
+  padding: 12px 15px;
+  color: #fff;
+}
+
+/* Hover effect */
+.submenu a:hover {
+  background-color: #9c6b43;
+}
+
+/* SHOW MENU ON HOVER */
+.dropdown:hover .submenu {
+  display: block;
 }
 
 
@@ -375,22 +386,26 @@ a:hover {
     <p>Mehandhi Artist | Melur & Madurai</p>
 </header>
 
-	<nav>
-  <ul>
+	<nav class="navbar">
+  <ul class="menu">
     <li><a href="#">Home</a></li>
     <li><a href="#">About</a></li>
-    <li class="services">
-      <a href="#">Services</a>
+
+    <li class="dropdown">
+      <a href="#">Services ▾</a>
       <ul class="submenu">
-        <li><a href="#">Arabic</a></li>
-        <li><a href="#">Wedding</a></li>
-        <li><a href="#">Special Functions</a></li>
+        <li><a href="#">Bridal Mehandi</a></li>
+        <li><a href="#">Engagement Mehandi</a></li>
+        <li><a href="#">Party Mehandi</a></li>
+        <li><a href="#">Arabic Mehandi</a></li>
       </ul>
     </li>
+
     <li><a href="#">Gallery</a></li>
     <li><a href="#">Contact</a></li>
   </ul>
 </nav>
+
 
 
 

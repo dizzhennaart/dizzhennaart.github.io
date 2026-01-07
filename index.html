@@ -62,7 +62,9 @@
   list-style: none;
   display: flex;
   gap: 30px;
+  justify-content: center;   /* ADD THIS */
 }
+
 
 .menu li {
   position: relative;
@@ -81,7 +83,8 @@
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #7a5432;
   min-width: 200px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);

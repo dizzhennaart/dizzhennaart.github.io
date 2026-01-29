@@ -197,9 +197,12 @@ body{
   to{transform:translateX(-50%);}
 }
 
-		.scroll-wrapper{
+.scroll-wrapper{
+  overflow-x: auto;
   scroll-behavior: smooth;
 }
+
+
 
 /* ===== ZOOM ===== */
 #zoomModal{
@@ -481,12 +484,35 @@ document.getElementById("close").onclick=()=>modal.style.display="none";
 function zoomIn(){scale+=.2;modalImg.style.transform=`scale(${scale})`}
 function zoomOut(){scale=Math.max(1,scale-.2);modalImg.style.transform=`scale(${scale})`}
 
-	const scrollWrapper = document.querySelector('.scroll-wrapper');
+<script>
+const wrapper = document.querySelector('.scroll-wrapper');
+const track = document.querySelector('.scroll-track');
 
-scrollWrapper.addEventListener('wheel', (e) => {
-  e.preventDefault();
-  scrollWrapper.scrollLeft += e.deltaY;
-}, { passive: false });
+let scrollTimeout;
+
+/* Pause auto-scroll when user interacts */
+function pauseAutoScroll() {
+  track.style.animationPlayState = 'paused';
+
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    track.style.animationPlayState = 'running';
+  }, 1200); // resume after user stops
+}
+
+/* Mouse wheel scroll */
+wrapper.addEventListener('wheel', () => {
+  pauseAutoScroll();
+});
+
+/* Touch scroll (mobile) */
+wrapper.addEventListener('touchstart', pauseAutoScroll);
+wrapper.addEventListener('touchmove', pauseAutoScroll);
+
+/* Mouse drag scroll */
+wrapper.addEventListener('mousedown', pauseAutoScroll);
+</script>
+
 </script>
 
 

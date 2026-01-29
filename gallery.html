@@ -157,16 +157,19 @@ a {
 }
 
 /* ===== SCROLL GALLERY ===== */
-.scroll-wrapper{
-  overflow-x:auto;
+.scroll-wrapper {
+  overflow-x: auto;
   scroll-behavior: smooth;
-  padding:20px 40px 60px;
+  padding: 20px 40px 60px;
   -webkit-overflow-scrolling: touch;
+
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
 }
 
-.scroll-track{
-  display:flex;
-  gap:30px;
+.scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .card img{

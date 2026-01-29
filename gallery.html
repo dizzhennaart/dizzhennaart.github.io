@@ -192,16 +192,32 @@ body{
   transform:scale(1.05);
 }
 
-@keyframes autoScroll{
-  from{transform:translateX(0);}
-  to{transform:translateX(-50%);}
+.scroll-wrapper {
+  width: 100%;
+  height: 350px;           /* adjust as needed */
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* smooth on mobile */
 }
 
-.scroll-wrapper{
-  overflow-x: auto;           /* allow horizontal scrolling */
-  scroll-behavior: smooth;    /* smooth manual scroll */
-  -webkit-overflow-scrolling: touch;
+.scroll-track {
+  display: flex;
+  gap: 15px;
+  height: 100%;
+  animation: autoScroll 20s linear infinite;
 }
+
+@keyframes autoScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% / 7 * 3)); } /* scroll width of some images */
+}
+
+/* pause auto-scroll */
+.scroll-track.paused {
+  animation-play-state: paused !important;
+}
+
 
 
 
@@ -486,33 +502,25 @@ document.getElementById("close").onclick=()=>modal.style.display="none";
 function zoomIn(){scale+=.2;modalImg.style.transform=`scale(${scale})`}
 function zoomOut(){scale=Math.max(1,scale-.2);modalImg.style.transform=`scale(${scale})`}
 
-const wrapper = document.querySelector('.scroll-wrapper');
-const track = document.querySelector('.scroll-track');
 
+	const wrapper = document.querySelector('.scroll-wrapper');
+const track = document.querySelector('.scroll-track');
 let scrollTimeout;
 
-/* Pause auto-scroll when user interacts */
 function pauseAutoScroll() {
-  track.style.animationPlayState = 'paused';
-
+  track.classList.add('paused');  // pause auto-scroll
   clearTimeout(scrollTimeout);
   scrollTimeout = setTimeout(() => {
-    track.style.animationPlayState = 'running';
-  }, 1200); // resume after user stops
+    track.classList.remove('paused'); // resume after 1.5s idle
+  }, 1500);
 }
 
-/* Mouse wheel scroll */
-wrapper.addEventListener('wheel', () => {
-  pauseAutoScroll();
-});
-
-/* Touch scroll (mobile) */
+// catch all manual scroll interactions
+wrapper.addEventListener('wheel', pauseAutoScroll);
+wrapper.addEventListener('scroll', pauseAutoScroll);
 wrapper.addEventListener('touchstart', pauseAutoScroll);
 wrapper.addEventListener('touchmove', pauseAutoScroll);
-
-/* Mouse drag scroll */
 wrapper.addEventListener('mousedown', pauseAutoScroll);
-wrapper.addEventListener('scroll', pauseAutoScroll);
 
 </script>
 

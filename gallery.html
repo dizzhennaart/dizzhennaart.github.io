@@ -5,45 +5,43 @@
 <title>Dizz Henna Art – Gallery</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- SEO Meta Tags -->
-    <title>Dizz Henna Art | Professional Mehandhi Artist in Melur, Madurai</title>
-    <meta name="description" content="Dizz Henna Art offers professional Arabic, wedding and special function mehandhi services in Melur and Madurai. Beautiful natural henna designs for every occasion.">
-    <meta name="keywords" content="Dizz Henna Art, Mehandhi Artist in Melur, Henna Artist Madurai, Bridal Mehandhi, Arabic Mehandhi">
-    <meta name="author" content="Dizz Henna Art">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- SEO Meta Tags -->
+<meta name="description" content="Dizz Henna Art offers professional Arabic, wedding and special function mehandhi services in Melur and Madurai. Beautiful natural henna designs for every occasion.">
+<meta name="keywords" content="Dizz Henna Art, Mehandhi Artist in Melur, Henna Artist Madurai, Bridal Mehandhi, Arabic Mehandhi">
+<meta name="author" content="Dizz Henna Art">
+
+<!-- FONT AWESOME FOR ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <style>
 body{
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f5e6d3;
-            color: #4b2e1f;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5e6d3;
+  color: #4b2e1f;
 }
 
+header {
+  background-color: #6f4e37;
+  padding: 2px;
+  text-align: center;
+}
 
-	 header {
-            background-color: #6f4e37;
-            padding: 2px;
-            text-align: center;
-        }
+header h1 {
+  color: #fff5e1;
+  margin: 0;
+}
+header p {
+  color: #f5e6d3;
+  margin-top: 3px;
+}
 
-        header h1 {
-            color: #fff5e1;
-            margin: 0;
-		}
-
-	 header p {
-            color: #f5e6d3;
-            margin-top: 3px;
-        }
-
-
-			a {
+a {
   color: inherit;
   text-decoration: none;
 }
 
-		.email-link {
+.email-link {
   color: inherit;
   text-decoration: none;
 }
@@ -64,9 +62,8 @@ body{
   list-style: none;
   display: flex;
   gap: 30px;
-  justify-content: center;   /* ADD THIS */
+  justify-content: center;
 }
-
 
 .menu li {
   position: relative;
@@ -107,12 +104,10 @@ body{
   color: #fff;
 }
 
-/* Hover effect */
 .submenu a:hover {
   background-color: #9c6b43;
 }
 
-/* SHOW MENU ON HOVER */
 .dropdown:hover .submenu {
   display: block;
 }
@@ -165,18 +160,14 @@ body{
 /* ===== SCROLL GALLERY ===== */
 .scroll-wrapper{
   overflow-x:auto;
+  scroll-behavior: smooth;
   padding:20px 40px 60px;
-  scrollbar-width:none;
+  -webkit-overflow-scrolling: touch;
 }
-.scroll-wrapper::-webkit-scrollbar{display:none;}
 
 .scroll-track{
   display:flex;
   gap:30px;
-  animation:autoScroll 35s linear infinite;
-}
-.scroll-wrapper:hover .scroll-track{
-  animation-play-state:paused;
 }
 
 .card img{
@@ -191,12 +182,6 @@ body{
 .card img:hover{
   transform:scale(1.05);
 }
-
-.scroll-wrapper{
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-
 
 /* ===== ZOOM ===== */
 #zoomModal{
@@ -232,12 +217,7 @@ body{
   cursor:pointer;
 }
 
-	        .location {
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-/* FOOTER BASE */
+/* FOOTER STYLES SAME AS YOUR CODE (including footer-overlay etc.) */
 .footer {
   position: relative;
   background: url("../images/footer-bg.jpg") center/cover no-repeat;
@@ -245,7 +225,6 @@ body{
   padding: 35px 0 15px;
   font-family: Cambria;
 }
-
 .footer-overlay {
   position: absolute;
   inset: 0;
@@ -255,7 +234,6 @@ body{
   );
   z-index: 1;
 }
-
 .footer .container {
   position: relative;
   z-index: 2;
@@ -263,149 +241,55 @@ body{
   margin: auto;
   padding: 0 15px;
 }
-
-/* TOP BAR */
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-logo h2 {
-  margin: 0 0 4px;
-  font-size: 18px;
-  color: #f5e6d3;
-}
-
-.footer-logo p {
-  margin: 0;
-  font-size: 16px;
-  color: #d6b27c;
-}
-
-.footer-socials span {
-  font-size: 16px;
-  margin-right: 8px;
-}
-
+.footer-top { display:flex; justify-content:space-between; align-items:center; }
+.footer-logo h2 { margin:0 0 4px; font-size:18px; color:#f5e6d3; }
+.footer-logo p { margin:0; font-size:16px; color:#d6b27c; }
+.footer-socials span { font-size:16px; margin-right:8px; }
 .footer-socials a {
-  width: 40px;
-  height: 40px;
-  background: #d6b27c;
-  color: #6f4a32;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 6px;
-  transition: 0.3s;
+  width:40px; height:40px;
+  background:#d6b27c;
+  color:#6f4a32;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-left:6px;
+  transition:0.3s;
+  font-size:18px;
 }
+.footer-socials a:hover { background:#f5e6d3; transform:translateY(-3px); }
+.footer-line { height:1px; background: rgba(245, 230, 211,0.3); margin:15px 0; }
+.footer-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.footer-section h3 { color:#d6b27c; margin-bottom:10px; font-size:18px; }
+.footer-section ul { list-style:none; padding:0; margin:0; }
+.footer-section ul li { margin-bottom:6px; font-size:16px; }
+.footer-section ul li a { color:#f5e6d3; text-decoration:none; }
+.footer-section ul li a:hover { color:#d6b27c; }
+.footer-section p { margin:6px 0; font-size:16px; line-height:2; }
+.footer-map iframe { width:100%; height:140px; border-radius:8px; border:2px solid #d6b27c; }
+.footer-bottom { margin-top:15px; padding-top:10px; text-align:center; font-size:16px; border-top:1px solid rgba(245,230,211,0.3); }
 
-.footer-socials a:hover {
-  background: #f5e6d3;
-  transform: translateY(-3px);
-}
-
-/* DIVIDER */
-.footer-line {
-  height: 1px;
-  background: rgba(245, 230, 211, 0.3);
-  margin: 15px 0;
-}
-
-/* GRID */
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-/* SECTIONS */
-.footer-section h3 {
-  color: #d6b27c;
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 6px;
-  font-size: 16px;
-}
-
-.footer-section ul li a {
-  color: #f5e6d3;
-  text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-  color: #d6b27c;
-}
-
-.footer-section p {
-  margin: 6px 0;
-  font-size: 16px;
-  line-height: 2;
-}
-
-/* MAP */
-.footer-map iframe {
-  width: 100%;
-  height: 140px;
-  border-radius: 8px;
-  border: 2px solid #d6b27c;
-}
-
-/* BOTTOM */
-.footer-bottom {
-  margin-top: 15px;
-  padding-top: 10px;
-  text-align: center;
-  font-size: 16px;
-  border-top: 1px solid rgba(245, 230, 211, 0.3);
-}
-
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .footer-top {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-}
-	
 /* MOBILE */
 @media(max-width:768px){
   .banner{height:280px;}
   .banner-text h1{font-size:28px;}
   .card img{width:220px;height:300px;}
+  .footer-top {flex-direction:column; gap:10px; text-align:center;}
+  .footer-grid {grid-template-columns:1fr; gap:15px;}
 }
 </style>
 </head>
 
 <body>
-
-	<header>
-    <h1>Dizz Henna Art</h1>
-    <p>Mehandhi Artist | Melur & Madurai</p>
+<header>
+  <h1>Dizz Henna Art</h1>
+  <p>Mehandhi Artist | Melur & Madurai</p>
 </header>
 
-	<nav class="navbar">
+<nav class="navbar">
   <ul class="menu">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-
     <li class="dropdown">
       <a href="#">Services ▾</a>
       <ul class="submenu">
@@ -415,14 +299,11 @@ body{
         <li><a href="#">Arabic Mehandi</a></li>
       </ul>
     </li>
-
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
-
-<!-- ===== BANNER (IMAGE EMBEDDED) ===== -->
 <section class="banner">
   <img src="">
   <div class="banner-text">
@@ -433,7 +314,6 @@ body{
 
 <h2 class="title">Our Latest Works</h2>
 
-<!-- ===== GALLERY ===== -->
 <div class="scroll-wrapper">
   <div class="scroll-track">
     <div class="card"><img src="Images/design1.png"></div>
@@ -443,15 +323,12 @@ body{
     <div class="card"><img src="Images/design5.png"></div>
     <div class="card"><img src="Images/design6.png"></div>
     <div class="card"><img src="Images/design7.png"></div>
-
-    <!-- duplicate for loop -->
     <div class="card"><img src="Images/design8.png"></div>
     <div class="card"><img src="Images/design9.png"></div>
-    <div class="card"><img src="images/design1.png"></div>
+    <div class="card"><img src="Images/design1.png"></div>
   </div>
 </div>
 
-<!-- ===== ZOOM ===== -->
 <div id="zoomModal">
   <span id="close">&times;</span>
   <img id="zoomImg">
@@ -478,50 +355,43 @@ document.getElementById("close").onclick=()=>modal.style.display="none";
 function zoomIn(){scale+=.2;modalImg.style.transform=`scale(${scale})`}
 function zoomOut(){scale=Math.max(1,scale-.2);modalImg.style.transform=`scale(${scale})`}
 
+/* ===== AUTO-SCROLL ===== */
 const wrapper = document.querySelector('.scroll-wrapper');
-const track = document.querySelector('.scroll-track');
+let scrollSpeed = 1; // pixels per frame
+let isScrolling = true;
 
-let scrollTimeout;
+function step(){
+  if(isScrolling){
+    wrapper.scrollLeft += scrollSpeed;
+    if(wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth){
+      wrapper.scrollLeft = 0;
+    }
+  }
+  requestAnimationFrame(step);
+}
+requestAnimationFrame(step);
 
-/* Pause auto-scroll when user interacts */
-function pauseAutoScroll() {
-  track.style.animationPlayState = 'paused';
-
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(() => {
-    track.style.animationPlayState = 'running';
-  }, 1200); // resume after user stops
+/* Pause scrolling on user interaction */
+function pauseScroll(){
+  isScrolling = false;
+  clearTimeout(window.resumeScroll);
+  window.resumeScroll = setTimeout(()=>{isScrolling=true;},1500);
 }
 
-/* Mouse wheel scroll */
-wrapper.addEventListener('wheel', () => {
-  pauseAutoScroll();
-});
-
-/* Touch scroll (mobile) */
-wrapper.addEventListener('touchstart', pauseAutoScroll);
-wrapper.addEventListener('touchmove', pauseAutoScroll);
-
-/* Mouse drag scroll */
-wrapper.addEventListener('mousedown', pauseAutoScroll);
-
-
+wrapper.addEventListener('wheel', pauseScroll);
+wrapper.addEventListener('mousedown', pauseScroll);
+wrapper.addEventListener('touchstart', pauseScroll);
+wrapper.addEventListener('touchmove', pauseScroll);
 </script>
 
-
-		<!-- FOOTER START -->
 <footer class="footer">
   <div class="footer-overlay"></div>
-
   <div class="container">
-
-    <!-- TOP -->
     <div class="footer-top">
       <div class="footer-logo">
         <h2>Dizz Henna Art</h2>
         <p>Mehandhi Artist | Melur & Madurai</p>
       </div>
-
       <div class="footer-socials">
         <span>Follow Our Socials</span>
         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -529,13 +399,8 @@ wrapper.addEventListener('mousedown', pauseAutoScroll);
         <a href="https://www.instagram.com/dizz_henna_art/"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
-
     <div class="footer-line"></div>
-
-    <!-- CONTENT -->
     <div class="footer-grid">
-
-      <!-- INFORMATION -->
       <div class="footer-section">
         <h3>Information</h3>
         <ul>
@@ -546,8 +411,6 @@ wrapper.addEventListener('mousedown', pauseAutoScroll);
           <li><a href="#">Contact</a></li>
         </ul>
       </div>
-
-      <!-- SERVICES -->
       <div class="footer-section">
         <h3>Services</h3>
         <ul>
@@ -557,35 +420,17 @@ wrapper.addEventListener('mousedown', pauseAutoScroll);
           <li>Baby Shower Mehndi</li>
         </ul>
       </div>
-
-      <!-- CONTACT -->
       <div class="footer-section">
         <h3>Contact Us</h3>
         <p><i class="fas fa-phone"></i> +91 94429 10175</p>
-       <p>
-  <i class="fas fa-envelope"></i>
-  <a href="mailto:dizzhennaart@gmail.com" class="email-link">
-    dizzhennaart@gmail.com
-  </a>
-</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:dizzhennaart@gmail.com" class="email-link">dizzhennaart@gmail.com</a></p>
         <p><i class="fas fa-map-marker-alt"></i> Melur & Madurai, Tamil Nadu</p>
       </div>
-
-      <!-- MAP -->
       <div class="footer-section footer-map">
-        <iframe
-          src="https://www.google.com/maps?q=Madurai&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          loading="lazy">
-        </iframe>
+        <iframe src="https://www.google.com/maps?q=Madurai&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
       </div>
-
     </div>
-
-    <!-- BOTTOM -->
-    <div class="footer-bottom">
-     © 2026. All rights reserved.
-    </div>
-
+    <div class="footer-bottom">© 2026. All rights reserved.</div>
   </div>
 </footer>
 </body>

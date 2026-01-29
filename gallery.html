@@ -5,7 +5,6 @@
 <title>Dizz Henna Art – Gallery</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO Meta Tags -->
 <meta name="description" content="Dizz Henna Art offers professional Arabic, wedding and special function mehandhi services in Melur and Madurai. Beautiful natural henna designs for every occasion.">
 <meta name="keywords" content="Dizz Henna Art, Mehandhi Artist in Melur, Henna Artist Madurai, Bridal Mehandhi, Arabic Mehandhi">
 <meta name="author" content="Dizz Henna Art">
@@ -197,6 +196,7 @@ a {
 #zoomModal img{
   max-width:85%;
   max-height:85%;
+  transition:transform 0.3s;
 }
 #close{
   position:absolute;
@@ -217,7 +217,24 @@ a {
   cursor:pointer;
 }
 
-/* FOOTER STYLES SAME AS YOUR CODE (including footer-overlay etc.) */
+/* NEXT/PREV BUTTONS IN ZOOM */
+#prev, #next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:50px;
+  color:#fff;
+  background:rgba(0,0,0,0.3);
+  border:none;
+  padding:10px 20px;
+  cursor:pointer;
+  border-radius:8px;
+  z-index:1001;
+}
+#prev{left:30px;}
+#next{right:30px;}
+
+/* FOOTER STYLES SAME AS YOUR CODE */
 .footer {
   position: relative;
   background: url("../images/footer-bg.jpg") center/cover no-repeat;
@@ -331,6 +348,8 @@ a {
 
 <div id="zoomModal">
   <span id="close">&times;</span>
+  <button id="prev">&#8249;</button>
+  <button id="next">&#8250;</button>
   <img id="zoomImg">
   <div class="controls">
     <button onclick="zoomIn()">+</button>
@@ -342,46 +361,45 @@ a {
 let scale=1;
 const modal=document.getElementById("zoomModal");
 const modalImg=document.getElementById("zoomImg");
+const images=document.querySelectorAll(".card img");
+let currentIndex=0;
 
-document.querySelectorAll(".card img").forEach(img=>{
-  img.onclick=()=>{
+// Open zoom
+images.forEach((img,index)=>{
+  img.addEventListener('click',()=>{
+    currentIndex=index;
     modal.style.display="flex";
     modalImg.src=img.src;
     scale=1;
     modalImg.style.transform="scale(1)";
-  }
+  });
 });
+
+// Close zoom
 document.getElementById("close").onclick=()=>modal.style.display="none";
-function zoomIn(){scale+=.2;modalImg.style.transform=`scale(${scale})`}
-function zoomOut(){scale=Math.max(1,scale-.2);modalImg.style.transform=`scale(${scale})`}
 
-/* ===== AUTO-SCROLL ===== */
-const wrapper = document.querySelector('.scroll-wrapper');
-let scrollSpeed = 1; // pixels per frame
-let isScrolling = true;
+// Zoom buttons
+function zoomIn(){scale+=.2; modalImg.style.transform=`scale(${scale})`;}
+function zoomOut(){scale=Math.max(1,scale-.2); modalImg.style.transform=`scale(${scale})`;}
 
-function step(){
-  if(isScrolling){
-    wrapper.scrollLeft += scrollSpeed;
-    if(wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth){
-      wrapper.scrollLeft = 0;
-    }
-  }
-  requestAnimationFrame(step);
-}
-requestAnimationFrame(step);
+// Next / Prev buttons
+document.getElementById("next").onclick=()=>{
+  currentIndex=(currentIndex+1)%images.length;
+  modalImg.src=images[currentIndex].src;
+  scale=1; modalImg.style.transform='scale(1)';
+};
+document.getElementById("prev").onclick=()=>{
+  currentIndex=(currentIndex-1+images.length)%images.length;
+  modalImg.src=images[currentIndex].src;
+  scale=1; modalImg.style.transform='scale(1)';
+};
 
-/* Pause scrolling on user interaction */
-function pauseScroll(){
-  isScrolling = false;
-  clearTimeout(window.resumeScroll);
-  window.resumeScroll = setTimeout(()=>{isScrolling=true;},1500);
-}
-
-wrapper.addEventListener('wheel', pauseScroll);
-wrapper.addEventListener('mousedown', pauseScroll);
-wrapper.addEventListener('touchstart', pauseScroll);
-wrapper.addEventListener('touchmove', pauseScroll);
+// Horizontal scroll on mouse wheel
+const wrapper=document.querySelector('.scroll-wrapper');
+wrapper.addEventListener('wheel', e=>{
+  e.preventDefault();
+  wrapper.scrollLeft += e.deltaY;
+});
 </script>
 
 <footer class="footer">

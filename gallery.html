@@ -204,6 +204,7 @@ body{
 
 
 
+
 /* ===== ZOOM ===== */
 #zoomModal{
   display:none;
@@ -484,7 +485,6 @@ document.getElementById("close").onclick=()=>modal.style.display="none";
 function zoomIn(){scale+=.2;modalImg.style.transform=`scale(${scale})`}
 function zoomOut(){scale=Math.max(1,scale-.2);modalImg.style.transform=`scale(${scale})`}
 
-<script>
 const wrapper = document.querySelector('.scroll-wrapper');
 const track = document.querySelector('.scroll-track');
 
@@ -511,7 +511,6 @@ wrapper.addEventListener('touchmove', pauseAutoScroll);
 
 /* Mouse drag scroll */
 wrapper.addEventListener('mousedown', pauseAutoScroll);
-</script>
 
 </script>
 

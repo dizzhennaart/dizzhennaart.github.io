@@ -197,6 +197,10 @@ body{
   to{transform:translateX(-50%);}
 }
 
+		.scroll-wrapper{
+  scroll-behavior: smooth;
+}
+
 /* ===== ZOOM ===== */
 #zoomModal{
   display:none;
@@ -369,6 +373,7 @@ body{
   border-top: 1px solid rgba(245, 230, 211, 0.3);
 }
 
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .footer-top {
@@ -475,6 +480,13 @@ document.querySelectorAll(".card img").forEach(img=>{
 document.getElementById("close").onclick=()=>modal.style.display="none";
 function zoomIn(){scale+=.2;modalImg.style.transform=`scale(${scale})`}
 function zoomOut(){scale=Math.max(1,scale-.2);modalImg.style.transform=`scale(${scale})`}
+
+	const scrollWrapper = document.querySelector('.scroll-wrapper');
+
+scrollWrapper.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  scrollWrapper.scrollLeft += e.deltaY;
+}, { passive: false });
 </script>
 
 

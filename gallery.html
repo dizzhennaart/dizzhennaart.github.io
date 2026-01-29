@@ -157,11 +157,17 @@ a {
 }
 
 /* ===== SCROLL GALLERY ===== */
-.scroll-wrapper {
-  overflow-x: auto;
+.scroll-wrapper{
+  overflow-x:auto;
   scroll-behavior: smooth;
-  padding: 20px 40px 60px;
+  padding:20px 40px 60px;
   -webkit-overflow-scrolling: touch;
+}
+
+.scroll-track{
+  display:flex;
+  gap:30px;
+}
 
   /* Hide scrollbar */
   scrollbar-width: none; /* Firefox */

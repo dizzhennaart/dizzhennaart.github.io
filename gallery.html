@@ -393,102 +393,89 @@ document.getElementById("close").onclick=()=>modal.style.display="none";
 function zoomIn(){scale+=.2; modalImg.style.transform=`scale(${scale})`;}
 function zoomOut(){scale=Math.max(1,scale-.2); modalImg.style.transform=`scale(${scale})`;}
 
-// Next / Prev buttons
-document.getElementById("next").onclick=()=>{
-  currentIndex=(currentIndex+1)%images.length;
-  modalImg.src=images[currentIndex].src;
-  scale=1; modalImg.style.transform='scale(1)';
-};
-document.getElementById("prev").onclick=()=>{
-  currentIndex=(currentIndex-1+images.length)%images.length;
-  modalImg.src=images[currentIndex].src;
-  scale=1; modalImg.style.transform='scale(1)';
-};
+<script>
+/* ============================
+   ZOOM FUNCTIONALITY (UNCHANGED)
+============================ */
+let scale = 1;
+const modal = document.getElementById("zoomModal");
+const modalImg = document.getElementById("zoomImg");
+const images = document.querySelectorAll(".card img");
+let currentIndex = 0;
 
-const wrapper = document.querySelector('.scroll-wrapper');
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-/* ---- DRAG LEFT / RIGHT ---- */
-wrapper.addEventListener('mousedown', (e) => {
-  isDown = true;
-  startX = e.pageX - wrapper.offsetLeft;
-  scrollLeft = wrapper.scrollLeft;
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    currentIndex = index;
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    scale = 1;
+    modalImg.style.transform = "scale(1)";
+  });
 });
 
-wrapper.addEventListener('mouseup', () => isDown = false);
-wrapper.addEventListener('mouseleave', () => isDown = false);
+document.getElementById("close").onclick = () => {
+  modal.style.display = "none";
+};
 
-wrapper.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - wrapper.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  wrapper.scrollLeft = scrollLeft - walk;
-});
-
-/* ---- AUTO SCROLL ---- */
-let autoScroll;
-
-function startAutoScroll() {
-  autoScroll = setInterval(() => {
-    wrapper.scrollLeft += 0.6;
-    if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth) {
-      wrapper.scrollLeft = 0;
-    }
-  }, 16);
+function zoomIn() {
+  scale += 0.2;
+  modalImg.style.transform = `scale(${scale})`;
 }
 
-function stopAutoScroll() {
-  clearInterval(autoScroll);
+function zoomOut() {
+  scale = Math.max(1, scale - 0.2);
+  modalImg.style.transform = `scale(${scale})`;
 }
 
-startAutoScroll();
+document.getElementById("next").onclick = () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  modalImg.src = images[currentIndex].src;
+  scale = 1;
+  modalImg.style.transform = "scale(1)";
+};
 
-/* Pause auto scroll on interaction */
+document.getElementById("prev").onclick = () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  modalImg.src = images[currentIndex].src;
+  scale = 1;
+  modalImg.style.transform = "scale(1)";
+};
 
-wrapper.addEventListener('mousedown', stopAutoScroll);
-wrapper.addEventListener('mouseup', startAutoScroll);
+/* ============================
+   SCROLLING (FIXED & CLEAN)
+============================ */
+const wrapper = document.querySelector(".scroll-wrapper");
 
+let isDragging = false;
+let startX = 0;
+let startScrollLeft = 0;
+let autoScrollInterval;
 
-  const wrapper = document.querySelector('.scroll-wrapper');
-
-let isDown = false;
-let startX;
-let scrollLeft;
-let autoScroll;
-
-/* ==========================
-   DRAG SCROLL (REAL MANUAL)
-========================== */
-wrapper.addEventListener('mousedown', (e) => {
-  isDown = true;
-  wrapper.classList.add('active');
+/* ---- MANUAL DRAG ---- */
+wrapper.addEventListener("mousedown", (e) => {
+  isDragging = true;
   startX = e.pageX;
-  scrollLeft = wrapper.scrollLeft;
+  startScrollLeft = wrapper.scrollLeft;
   stopAutoScroll();
 });
 
-window.addEventListener('mouseup', () => {
-  if (!isDown) return;
-  isDown = false;
+window.addEventListener("mouseup", () => {
+  if (!isDragging) return;
+  isDragging = false;
   startAutoScroll();
 });
 
-wrapper.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
+wrapper.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
   e.preventDefault();
-  const walk = (e.pageX - startX) * 1.8; // drag sensitivity
-  wrapper.scrollLeft = scrollLeft - walk;
+  const walk = (e.pageX - startX) * 1.8;
+  wrapper.scrollLeft = startScrollLeft - walk;
 });
 
-/* ==========================
-   AUTO SCROLL
-========================== */
+/* ---- AUTO SCROLL ---- */
 function startAutoScroll() {
-  autoScroll = setInterval(() => {
+  stopAutoScroll();
+  autoScrollInterval = setInterval(() => {
     wrapper.scrollLeft += 0.6;
     if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth) {
       wrapper.scrollLeft = 0;
@@ -497,11 +484,12 @@ function startAutoScroll() {
 }
 
 function stopAutoScroll() {
-  clearInterval(autoScroll);
+  clearInterval(autoScrollInterval);
 }
 
 startAutoScroll();
-  
+</script>
+
 </script>
 
 <footer class="footer">

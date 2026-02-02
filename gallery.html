@@ -395,12 +395,53 @@ document.getElementById("prev").onclick=()=>{
   scale=1; modalImg.style.transform='scale(1)';
 };
 
-// Horizontal scroll on mouse wheel
-const wrapper=document.querySelector('.scroll-wrapper');
-wrapper.addEventListener('wheel', e=>{
-  e.preventDefault();
-  wrapper.scrollLeft += e.deltaY;
+const wrapper = document.querySelector('.scroll-wrapper');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+/* ---- DRAG LEFT / RIGHT ---- */
+wrapper.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - wrapper.offsetLeft;
+  scrollLeft = wrapper.scrollLeft;
 });
+
+wrapper.addEventListener('mouseup', () => isDown = false);
+wrapper.addEventListener('mouseleave', () => isDown = false);
+
+wrapper.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - wrapper.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  wrapper.scrollLeft = scrollLeft - walk;
+});
+
+/* ---- AUTO SCROLL ---- */
+let autoScroll;
+
+function startAutoScroll() {
+  autoScroll = setInterval(() => {
+    wrapper.scrollLeft += 0.6;
+    if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth) {
+      wrapper.scrollLeft = 0;
+    }
+  }, 16);
+}
+
+function stopAutoScroll() {
+  clearInterval(autoScroll);
+}
+
+startAutoScroll();
+
+/* Pause auto scroll on interaction */
+wrapper.addEventListener('mouseenter', stopAutoScroll);
+wrapper.addEventListener('mouseleave', startAutoScroll);
+wrapper.addEventListener('mousedown', stopAutoScroll);
+wrapper.addEventListener('mouseup', startAutoScroll);
 </script>
 
 <footer class="footer">

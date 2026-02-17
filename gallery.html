@@ -183,7 +183,7 @@ a {
 
 .card img{
   width:280px;
-  height:420px; /* increased height for "little longer" */
+  height:420px; /* slightly longer */
   object-fit:cover;
   border-radius:22px;
   cursor:zoom-in;
@@ -377,111 +377,80 @@ a {
 </div>
 
 <script>
+// Zoom functionality
 let scale = 1;
 const modal = document.getElementById("zoomModal");
 const modalImg = document.getElementById("zoomImg");
 const images = document.querySelectorAll(".card img");
 let currentIndex = 0;
 
-// Open zoom on image click
-images.forEach((img, index) => {
-  img.addEventListener("click", () => {
-    currentIndex = index;
-    modal.style.display = "flex";
-    modalImg.src = img.src;
-    scale = 1;
-    modalImg.style.transform = "scale(1)";
+images.forEach((img,index)=>{
+  img.addEventListener("click",()=>{
+    currentIndex=index;
+    modal.style.display="flex";
+    modalImg.src=img.src;
+    scale=1;
+    modalImg.style.transform="scale(1)";
   });
 });
 
-// Close zoom modal
-document.getElementById("close").onclick = () => {
-  modal.style.display = "none";
-};
+document.getElementById("close").onclick = () => { modal.style.display="none"; };
+function zoomIn(){ scale+=0.2; modalImg.style.transform=`scale(${scale})`; }
+function zoomOut(){ scale=Math.max(1,scale-0.2); modalImg.style.transform=`scale(${scale})`; }
+document.getElementById("next").onclick = () => { currentIndex=(currentIndex+1)%images.length; modalImg.src=images[currentIndex].src; scale=1; modalImg.style.transform=`scale(1)`; }
+document.getElementById("prev").onclick = () => { currentIndex=(currentIndex-1+images.length)%images.length; modalImg.src=images[currentIndex].src; scale=1; modalImg.style.transform=`scale(1)`; }
 
-// Zoom controls
-function zoomIn() {
-  scale += 0.2;
-  modalImg.style.transform = `scale(${scale})`;
-}
-
-function zoomOut() {
-  scale = Math.max(1, scale - 0.2);
-  modalImg.style.transform = `scale(${scale})`;
-}
-
-// Next and Prev buttons in zoom
-document.getElementById("next").onclick = () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  modalImg.src = images[currentIndex].src;
-  scale = 1;
-  modalImg.style.transform = "scale(1)";
-};
-
-document.getElementById("prev").onclick = () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  modalImg.src = images[currentIndex].src;
-  scale = 1;
-  modalImg.style.transform = "scale(1)";
-};
-
-// SCROLLING AND DRAGGING FUNCTIONALITY
+// Scroll wrapper functionality
 const wrapper = document.querySelector(".scroll-wrapper");
+let isDragging=false, startX, scrollLeft, autoScroll;
 
-let isDragging = false;
-let startX;
-let scrollLeft;
-let autoScrollInterval;
-
-// Start automatic scrolling
-function startAutoScroll() {
+function startAutoScroll(){
   stopAutoScroll();
-  autoScrollInterval = setInterval(() => {
+  autoScroll = setInterval(()=>{
     wrapper.scrollLeft += 0.6;
-    if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth) {
-      wrapper.scrollLeft = 0;
+    if(wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth){
+      wrapper.scrollLeft=0;
     }
-  }, 16);
+  },16);
 }
 
-// Stop automatic scrolling
-function stopAutoScroll() {
-  clearInterval(autoScrollInterval);
+function stopAutoScroll(){
+  clearInterval(autoScroll);
 }
 
-startAutoScroll();
-
-// Mouse drag to scroll
-wrapper.addEventListener("mousedown", (e) => {
-  isDragging = true;
-  startX = e.pageX - wrapper.offsetLeft;
-  scrollLeft = wrapper.scrollLeft;
+wrapper.addEventListener("mousedown",(e)=>{
+  isDragging=true;
+  startX=e.pageX - wrapper.offsetLeft;
+  scrollLeft=wrapper.scrollLeft;
   stopAutoScroll();
-  wrapper.style.cursor = "grabbing";
+  wrapper.style.cursor="grabbing";
 });
 
-window.addEventListener("mouseup", () => {
-  if (!isDragging) return;
-  isDragging = false;
-  startAutoScroll();
-  wrapper.style.cursor = "grab";
-});
-
-wrapper.addEventListener("mouseleave", () => {
-  if (isDragging) {
-    isDragging = false;
+window.addEventListener("mouseup",()=>{
+  if(isDragging){
+    isDragging=false;
+    wrapper.style.cursor="grab";
     startAutoScroll();
-    wrapper.style.cursor = "grab";
   }
 });
 
-wrapper.addEventListener("mousemove", (e) => {
-  if (!isDragging) return;
-  e.preventDefault();
-  const x = e.pageX - wrapper.offsetLeft;
-  const walk = (x - startX) * 1.8; // scroll-fast multiplier
-  wrapper.scrollLeft = scrollLeft - walk;
+wrapper.addEventListener("mouseleave",()=>{
+  if(isDragging){
+    isDragging=false;
+    wrapper.style.cursor="grab";
+    startAutoScroll();
+  }
 });
+
+wrapper.addEventListener("mousemove",(e)=>{
+  if(!isDragging) return;
+  e.preventDefault();
+  const x=e.pageX - wrapper.offsetLeft;
+  const walk=(x-startX)*1.8;
+  wrapper.scrollLeft=scrollLeft-walk;
+});
+
+startAutoScroll();
 </script>
 
 <footer class="footer">

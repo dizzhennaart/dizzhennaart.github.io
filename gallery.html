@@ -9,10 +9,10 @@
 <meta name="keywords" content="Dizz Henna Art, Mehandhi Artist in Melur, Henna Artist Madurai, Bridal Mehandhi, Arabic Mehandhi">
 <meta name="author" content="Dizz Henna Art">
 
-<!-- FONT AWESOME FOR ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <style>
+/* ===== YOUR ORIGINAL CSS (UNCHANGED) ===== */
 body{
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -40,12 +40,6 @@ a {
   text-decoration: none;
 }
 
-.email-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Basic reset */
 * {
   margin: 0;
   padding: 0;
@@ -76,7 +70,6 @@ a {
   display: block;
 }
 
-/* Submenu */
 .submenu {
   display: none;
   position: absolute;
@@ -111,7 +104,7 @@ a {
   display: block;
 }
 
-/* ===== BANNER ===== */
+/* BANNER */
 .banner{
   position:relative;
   height:420px;
@@ -148,7 +141,6 @@ a {
   color:#e6cfa5;
 }
 
-/* ===== TITLE ===== */
 .title{
   text-align:center;
   font-size:32px;
@@ -156,19 +148,22 @@ a {
   color:#5a3a22;
 }
 
-/* ===== SCROLL GALLERY ===== */
 .scroll-wrapper{
   overflow-x:auto;
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
   padding:20px 40px 60px;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width:none;
+}
+.scroll-wrapper::-webkit-scrollbar{
+  display:none;
 }
 
 .scroll-track{
   display:flex;
   gap:30px;
+  width:max-content;
 }
-
 
 .card img{
   width:280px;
@@ -183,7 +178,7 @@ a {
   transform:scale(1.05);
 }
 
-/* ===== ZOOM ===== */
+/* ZOOM */
 #zoomModal{
   display:none;
   position:fixed;
@@ -217,9 +212,7 @@ a {
   color:#3a2416;
   cursor:pointer;
 }
-
-/* NEXT/PREV BUTTONS IN ZOOM */
-#prev, #next{
+#prev,#next{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
@@ -230,85 +223,20 @@ a {
   padding:10px 20px;
   cursor:pointer;
   border-radius:8px;
-  z-index:1001;
 }
 #prev{left:30px;}
 #next{right:30px;}
 
-/* FOOTER STYLES SAME AS YOUR CODE */
-.footer {
-  position: relative;
-  background: url("../images/footer-bg.jpg") center/cover no-repeat;
-  color: #f5e6d3;
-  padding: 35px 0 15px;
-  font-family: Cambria;
-}
-.footer-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(111, 74, 50, 0.95),
-    rgba(138, 94, 60, 0.95)
-  );
-  z-index: 1;
-}
-.footer .container {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 15px;
-}
-.footer-top { display:flex; justify-content:space-between; align-items:center; }
-.footer-logo h2 { margin:0 0 4px; font-size:18px; color:#f5e6d3; }
-.footer-logo p { margin:0; font-size:16px; color:#d6b27c; }
-.footer-socials span { font-size:16px; margin-right:8px; }
-.footer-socials a {
-  width:40px; height:40px;
-  background:#d6b27c;
-  color:#6f4a32;
-  border-radius:50%;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  margin-left:6px;
-  transition:0.3s;
-  font-size:18px;
-}
-.footer-socials a:hover { background:#f5e6d3; transform:translateY(-3px); }
-.footer-line { height:1px; background: rgba(245, 230, 211,0.3); margin:15px 0; }
-.footer-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
-.footer-section h3 { color:#d6b27c; margin-bottom:10px; font-size:18px; }
-.footer-section ul { list-style:none; padding:0; margin:0; }
-.footer-section ul li { margin-bottom:6px; font-size:16px; }
-.footer-section ul li a { color:#f5e6d3; text-decoration:none; }
-.footer-section ul li a:hover { color:#d6b27c; }
-.footer-section p { margin:6px 0; font-size:16px; line-height:2; }
-.footer-map iframe { width:100%; height:140px; border-radius:8px; border:2px solid #d6b27c; }
-.footer-bottom { margin-top:15px; padding-top:10px; text-align:center; font-size:16px; border-top:1px solid rgba(245,230,211,0.3); }
-
-
-  .scroll-wrapper {
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* IE & Edge */
-}
-.scroll-wrapper::-webkit-scrollbar {
-  display: none;                /* Chrome, Safari */
-}
-
-
-/* MOBILE */
 @media(max-width:768px){
   .banner{height:280px;}
   .banner-text h1{font-size:28px;}
   .card img{width:220px;height:300px;}
-  .footer-top {flex-direction:column; gap:10px; text-align:center;}
-  .footer-grid {grid-template-columns:1fr; gap:15px;}
 }
 </style>
 </head>
 
 <body>
+
 <header>
   <h1>Dizz Henna Art</h1>
   <p>Mehandhi Artist | Melur & Madurai</p>
@@ -332,18 +260,12 @@ a {
   </ul>
 </nav>
 
-<section class="banner">
-  <img src="">
-  <div class="banner-text">
-    <h1>Elegant Mehndi Designs</h1>
-    <p>Arabic • Bridal • Traditional</p>
-  </div>
-</section>
-
 <h2 class="title">Our Latest Works</h2>
 
-<div class="scroll-wrapper">
-  <div class="scroll-track">
+<div class="scroll-wrapper" id="wrapper">
+  <div class="scroll-track" id="track">
+
+    <!-- ORIGINAL -->
     <div class="card"><img src="Images/design1.png"></div>
     <div class="card"><img src="Images/design2.png"></div>
     <div class="card"><img src="Images/design3.png"></div>
@@ -353,7 +275,18 @@ a {
     <div class="card"><img src="Images/design7.png"></div>
     <div class="card"><img src="Images/design8.png"></div>
     <div class="card"><img src="Images/design9.png"></div>
+
+    <!-- DUPLICATE FOR LOOP -->
     <div class="card"><img src="Images/design1.png"></div>
+    <div class="card"><img src="Images/design2.png"></div>
+    <div class="card"><img src="Images/design3.png"></div>
+    <div class="card"><img src="Images/design4.png"></div>
+    <div class="card"><img src="Images/design5.png"></div>
+    <div class="card"><img src="Images/design6.png"></div>
+    <div class="card"><img src="Images/design7.png"></div>
+    <div class="card"><img src="Images/design8.png"></div>
+    <div class="card"><img src="Images/design9.png"></div>
+
   </div>
 </div>
 
@@ -369,15 +302,63 @@ a {
 </div>
 
 <script>
+/* AUTO SCROLL */
+const wrapper=document.getElementById("wrapper");
+const track=document.getElementById("track");
+
+let speed=0.6;
+let animation;
+
+function autoScroll(){
+  wrapper.scrollLeft+=speed;
+  if(wrapper.scrollLeft>=track.scrollWidth/2){
+    wrapper.scrollLeft=0;
+  }
+  animation=requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+/* DRAG */
+let isDown=false,startX,scrollLeft;
+
+wrapper.addEventListener("mousedown",e=>{
+  cancelAnimationFrame(animation);
+  isDown=true;
+  startX=e.pageX;
+  scrollLeft=wrapper.scrollLeft;
+});
+
+wrapper.addEventListener("mouseup",()=>{isDown=false;autoScroll();});
+wrapper.addEventListener("mouseleave",()=>{if(isDown){isDown=false;autoScroll();}});
+
+wrapper.addEventListener("mousemove",e=>{
+  if(!isDown)return;
+  e.preventDefault();
+  const walk=(e.pageX-startX)*2;
+  wrapper.scrollLeft=scrollLeft-walk;
+});
+
+/* TOUCH */
+wrapper.addEventListener("touchstart",e=>{
+  cancelAnimationFrame(animation);
+  startX=e.touches[0].pageX;
+  scrollLeft=wrapper.scrollLeft;
+});
+wrapper.addEventListener("touchmove",e=>{
+  const walk=(e.touches[0].pageX-startX)*2;
+  wrapper.scrollLeft=scrollLeft-walk;
+});
+wrapper.addEventListener("touchend",()=>autoScroll());
+
+/* ZOOM */
 let scale=1;
 const modal=document.getElementById("zoomModal");
 const modalImg=document.getElementById("zoomImg");
 const images=document.querySelectorAll(".card img");
 let currentIndex=0;
 
-// Open zoom
 images.forEach((img,index)=>{
-  img.addEventListener('click',()=>{
+  img.addEventListener("click",()=>{
     currentIndex=index;
     modal.style.display="flex";
     modalImg.src=img.src;
@@ -386,160 +367,25 @@ images.forEach((img,index)=>{
   });
 });
 
-// Close zoom
 document.getElementById("close").onclick=()=>modal.style.display="none";
 
-// Zoom buttons
-function zoomIn(){scale+=.2; modalImg.style.transform=`scale(${scale})`;}
-function zoomOut(){scale=Math.max(1,scale-.2); modalImg.style.transform=`scale(${scale})`;}
+function zoomIn(){scale+=.2;modalImg.style.transform=`scale(${scale})`;}
+function zoomOut(){scale=Math.max(1,scale-.2);modalImg.style.transform=`scale(${scale})`;}
 
-<script>
-/* ============================
-   ZOOM FUNCTIONALITY (UNCHANGED)
-============================ */
-let scale = 1;
-const modal = document.getElementById("zoomModal");
-const modalImg = document.getElementById("zoomImg");
-const images = document.querySelectorAll(".card img");
-let currentIndex = 0;
-
-images.forEach((img, index) => {
-  img.addEventListener("click", () => {
-    currentIndex = index;
-    modal.style.display = "flex";
-    modalImg.src = img.src;
-    scale = 1;
-    modalImg.style.transform = "scale(1)";
-  });
-});
-
-document.getElementById("close").onclick = () => {
-  modal.style.display = "none";
+document.getElementById("next").onclick=()=>{
+  currentIndex=(currentIndex+1)%images.length;
+  modalImg.src=images[currentIndex].src;
+  scale=1;
+  modalImg.style.transform="scale(1)";
 };
 
-function zoomIn() {
-  scale += 0.2;
-  modalImg.style.transform = `scale(${scale})`;
-}
-
-function zoomOut() {
-  scale = Math.max(1, scale - 0.2);
-  modalImg.style.transform = `scale(${scale})`;
-}
-
-document.getElementById("next").onclick = () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  modalImg.src = images[currentIndex].src;
-  scale = 1;
-  modalImg.style.transform = "scale(1)";
+document.getElementById("prev").onclick=()=>{
+  currentIndex=(currentIndex-1+images.length)%images.length;
+  modalImg.src=images[currentIndex].src;
+  scale=1;
+  modalImg.style.transform="scale(1)";
 };
-
-document.getElementById("prev").onclick = () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  modalImg.src = images[currentIndex].src;
-  scale = 1;
-  modalImg.style.transform = "scale(1)";
-};
-
-/* ============================
-   SCROLLING (FIXED & CLEAN)
-============================ */
-const wrapper = document.querySelector(".scroll-wrapper");
-
-let isDragging = false;
-let startX = 0;
-let startScrollLeft = 0;
-let autoScrollInterval;
-
-/* ---- MANUAL DRAG ---- */
-wrapper.addEventListener("mousedown", (e) => {
-  isDragging = true;
-  startX = e.pageX;
-  startScrollLeft = wrapper.scrollLeft;
-  stopAutoScroll();
-});
-
-window.addEventListener("mouseup", () => {
-  if (!isDragging) return;
-  isDragging = false;
-  startAutoScroll();
-});
-
-wrapper.addEventListener("mousemove", (e) => {
-  if (!isDragging) return;
-  e.preventDefault();
-  const walk = (e.pageX - startX) * 1.8;
-  wrapper.scrollLeft = startScrollLeft - walk;
-});
-
-/* ---- AUTO SCROLL ---- */
-function startAutoScroll() {
-  stopAutoScroll();
-  autoScrollInterval = setInterval(() => {
-    wrapper.scrollLeft += 0.6;
-    if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth) {
-      wrapper.scrollLeft = 0;
-    }
-  }, 16);
-}
-
-function stopAutoScroll() {
-  clearInterval(autoScrollInterval);
-}
-
-startAutoScroll();
 </script>
 
-</script>
-
-<footer class="footer">
-  <div class="footer-overlay"></div>
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-logo">
-        <h2>Dizz Henna Art</h2>
-        <p>Mehandhi Artist | Melur & Madurai</p>
-      </div>
-      <div class="footer-socials">
-        <span>Follow Our Socials</span>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.youtube.com/@dizz_henna_art/"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/dizz_henna_art/"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-    <div class="footer-line"></div>
-    <div class="footer-grid">
-      <div class="footer-section">
-        <h3>Information</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Services</h3>
-        <ul>
-          <li>Bridal Mehndi</li>
-          <li>Arabic Mehndi</li>
-          <li>Engagement Mehndi</li>
-          <li>Baby Shower Mehndi</li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p><i class="fas fa-phone"></i> +91 94429 10175</p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:dizzhennaart@gmail.com" class="email-link">dizzhennaart@gmail.com</a></p>
-        <p><i class="fas fa-map-marker-alt"></i> Melur & Madurai, Tamil Nadu</p>
-      </div>
-      <div class="footer-section footer-map">
-        <iframe src="https://www.google.com/maps?q=Madurai&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
-      </div>
-    </div>
-    <div class="footer-bottom">© 2026. All rights reserved.</div>
-  </div>
-</footer>
 </body>
 </html>

@@ -81,8 +81,8 @@ header p{color:#f5e6d3;margin-top:3px;}
   scroll-behavior:smooth;
   padding:20px 40px 60px;
   -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
   cursor:grab;
+  scrollbar-width:none;
 }
 .scroll-wrapper::-webkit-scrollbar{display:none;}
 
@@ -186,8 +186,9 @@ header p{color:#f5e6d3;margin-top:3px;}
 <h2 class="title">Our Latest Works</h2>
 
 <div class="scroll-wrapper" id="wrapper">
-  <div class="scroll-track" id="track">
+  <div class="scroll-track">
 
+    <!-- Duplicate images to make gallery longer -->
     <div class="card"><img src="Images/design1.png"></div>
     <div class="card"><img src="Images/design2.png"></div>
     <div class="card"><img src="Images/design3.png"></div>
@@ -197,6 +198,13 @@ header p{color:#f5e6d3;margin-top:3px;}
     <div class="card"><img src="Images/design7.png"></div>
     <div class="card"><img src="Images/design8.png"></div>
     <div class="card"><img src="Images/design9.png"></div>
+    <div class="card"><img src="Images/design1.png"></div>
+    <div class="card"><img src="Images/design2.png"></div>
+    <div class="card"><img src="Images/design3.png"></div>
+    <div class="card"><img src="Images/design4.png"></div>
+    <div class="card"><img src="Images/design5.png"></div>
+    <div class="card"><img src="Images/design6.png"></div>
+    <div class="card"><img src="Images/design7.png"></div>
 
   </div>
 </div>
@@ -213,46 +221,44 @@ header p{color:#f5e6d3;margin-top:3px;}
 </div>
 
 <script>
-/* ===================== MOUSE DRAG ONLY ===================== */
-const wrapper=document.getElementById("wrapper");
-
-let isDown=false;
+/* ===================== TRUE DRAG ===================== */
+const wrapper = document.getElementById("wrapper");
+let isDown = false;
 let startX;
 let scrollLeft;
 
-wrapper.addEventListener("mousedown",(e)=>{
-  isDown=true;
-  wrapper.style.cursor="grabbing";
-  startX=e.pageX;
-  scrollLeft=wrapper.scrollLeft;
+wrapper.addEventListener("mousedown", (e) => {
+  isDown = true;
+  wrapper.style.cursor = "grabbing";
+  startX = e.pageX;
+  scrollLeft = wrapper.scrollLeft;
 });
 
-wrapper.addEventListener("mousemove",(e)=>{
+wrapper.addEventListener("mousemove", (e) => {
   if(!isDown) return;
   e.preventDefault();
-  const walk=e.pageX-startX;
-  wrapper.scrollLeft=scrollLeft-walk;
+  const walk = e.pageX - startX;
+  wrapper.scrollLeft = scrollLeft - walk;
 });
 
-wrapper.addEventListener("mouseup",()=>{
-  isDown=false;
-  wrapper.style.cursor="grab";
+wrapper.addEventListener("mouseup", () => {
+  isDown = false;
+  wrapper.style.cursor = "grab";
 });
 
-wrapper.addEventListener("mouseleave",()=>{
-  if(!isDown) return;
-  isDown=false;
-  wrapper.style.cursor="grab";
+wrapper.addEventListener("mouseleave", () => {
+  isDown = false;
+  wrapper.style.cursor = "grab";
 });
 
 /* TOUCH SUPPORT */
-wrapper.addEventListener("touchstart",(e)=>{
-  startX=e.touches[0].pageX;
-  scrollLeft=wrapper.scrollLeft;
+wrapper.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].pageX;
+  scrollLeft = wrapper.scrollLeft;
 });
-wrapper.addEventListener("touchmove",(e)=>{
-  const walk=e.touches[0].pageX-startX;
-  wrapper.scrollLeft=scrollLeft-walk;
+wrapper.addEventListener("touchmove", (e) => {
+  const walk = e.touches[0].pageX - startX;
+  wrapper.scrollLeft = scrollLeft - walk;
 });
 
 /* ===================== ZOOM ===================== */
@@ -281,13 +287,13 @@ document.getElementById("next").onclick=()=>{
   currentIndex=(currentIndex+1)%images.length;
   modalImg.src=images[currentIndex].src;
   scale=1;
-  modalImg.style.transform="scale(1)";
+  modalImg.style.transform=`scale(1)`;
 };
 document.getElementById("prev").onclick=()=>{
   currentIndex=(currentIndex-1+images.length)%images.length;
   modalImg.src=images[currentIndex].src;
   scale=1;
-  modalImg.style.transform="scale(1)";
+  modalImg.style.transform=`scale(1)`;
 };
 </script>
 

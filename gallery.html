@@ -100,57 +100,15 @@ header p{color:#f5e6d3;margin-top:3px;}
   cursor:zoom-in;
   box-shadow:0 18px 35px rgba(90,58,34,0.35);
   transition:.4s;
+
+  /* Prevent ghost dragging */
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  user-drag: none;
 }
 .card img:hover{transform:scale(1.05);}
-
-/* ZOOM */
-#zoomModal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(40,22,12,.95);
-  z-index:999;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-}
-#zoomModal img{
-  max-width:85%;
-  max-height:85%;
-  transition:transform 0.3s;
-}
-#close{
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:40px;
-  color:#fff;
-  cursor:pointer;
-}
-.controls button{
-  margin:10px 6px;
-  font-size:22px;
-  padding:10px 18px;
-  border:none;
-  border-radius:50%;
-  background:#c49b63;
-  color:#3a2416;
-  cursor:pointer;
-}
-#prev,#next{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:50px;
-  color:#fff;
-  background:rgba(0,0,0,0.3);
-  border:none;
-  padding:10px 20px;
-  cursor:pointer;
-  border-radius:8px;
-}
-#prev{left:30px;}
-#next{right:30px;}
 
 @media(max-width:768px){
   .card img{width:220px;height:350px;}
@@ -300,7 +258,6 @@ document.getElementById("prev").onclick=()=>{
 };
 </script>
 
-<!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="footer-overlay"></div>
   <div class="container">
@@ -339,7 +296,7 @@ document.getElementById("prev").onclick=()=>{
       </div>
       <div class="footer-section">
         <h3>Contact Us</h3>
-        <p><i class="fas fa-phone"></i> +91 94429 10175</p>
+        <p><i class="fas fa-phone"></i> +91 81100 15288</p>
         <p><i class="fas fa-envelope"></i> <a href="mailto:dizzhennaart@gmail.com">dizzhennaart@gmail.com</a></p>
         <p><i class="fas fa-map-marker-alt"></i> Melur & Madurai, Tamil Nadu</p>
       </div>

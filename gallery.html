@@ -9,65 +9,146 @@
 <meta name="keywords" content="Dizz Henna Art, Mehandhi Artist in Melur, Henna Artist Madurai, Bridal Mehandhi, Arabic Mehandhi">
 <meta name="author" content="Dizz Henna Art">
 
+<!-- FONT AWESOME FOR ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <style>
 body{
-  margin:0;
-  font-family:'Segoe UI', sans-serif;
-  background:#f5e6d3;
-  color:#4b2e1f;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5e6d3;
+  color: #4b2e1f;
 }
 
-header{
-  background:#6f4e37;
-  padding:2px;
+header {
+  background-color: #6f4e37;
+  padding: 2px;
+  text-align: center;
+}
+
+header h1 {
+  color: #fff5e1;
+  margin: 0;
+}
+header p {
+  color: #f5e6d3;
+  margin-top: 3px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.email-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: #6b4a2d;
+  padding: 10px 40px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 0;
+  display: block;
+}
+
+/* Submenu */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #7a5432;
+  min-width: 200px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.submenu li {
+  border-bottom: 1px solid #8b623e;
+}
+
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+.submenu a {
+  padding: 12px 15px;
+  color: #fff;
+}
+
+.submenu a:hover {
+  background-color: #9c6b43;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+/* ===== BANNER ===== */
+.banner{
+  position:relative;
+  height:420px;
+  overflow:hidden;
+}
+.banner img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.banner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(58,36,22,0.55);
+}
+.banner-text{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:#f6efe8;
   text-align:center;
 }
-header h1{color:#fff5e1;margin:0;}
-header p{color:#f5e6d3;margin-top:3px;}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
-.navbar{
-  background:#6b4a2d;
-  padding:10px 40px;
+.banner-text h1{
+  font-size:44px;
+  margin-bottom:8px;
 }
-.menu{
-  list-style:none;
-  display:flex;
-  gap:30px;
-  justify-content:center;
-}
-.menu li{position:relative;}
-.menu a{
-  color:#fff;
-  text-decoration:none;
+.banner-text p{
   font-size:18px;
-  padding:10px 0;
-  display:block;
+  color:#e6cfa5;
 }
 
-.submenu{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:50%;
-  transform:translateX(-50%);
-  background:#7a5432;
-  min-width:200px;
-  box-shadow:0 6px 12px rgba(0,0,0,0.3);
-  border-radius:4px;
-  z-index:1000;
-}
-.submenu li{
-  border-bottom:1px solid #8b623e;
-}
-.submenu li:last-child{border-bottom:none;}
-.submenu a{padding:12px 15px;color:#fff;}
-.submenu a:hover{background:#9c6b43;}
-.dropdown:hover .submenu{display:block;}
-
+/* ===== TITLE ===== */
 .title{
   text-align:center;
   font-size:32px;
@@ -75,50 +156,100 @@ header p{color:#f5e6d3;margin-top:3px;}
   color:#5a3a22;
 }
 
-/* SCROLL GALLERY */
+/* ===== SCROLL GALLERY ===== */
 .scroll-wrapper{
   overflow-x:auto;
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
   padding:20px 40px 60px;
-  -webkit-overflow-scrolling:touch;
-  cursor:grab;
-  scrollbar-width:none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE & Edge */
 }
-.scroll-wrapper::-webkit-scrollbar{display:none;}
+
+.scroll-wrapper:active {
+  cursor: grabbing;
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari */
+}
 
 .scroll-track{
   display:flex;
   gap:30px;
-  width:max-content;
 }
 
 .card img{
   width:280px;
-  height:420px; /* increased height for longer images */
+  height:420px; /* increased height for "little longer" */
   object-fit:cover;
   border-radius:22px;
   cursor:zoom-in;
   box-shadow:0 18px 35px rgba(90,58,34,0.35);
   transition:.4s;
-
-  /* Prevent ghost dragging */
-  user-select: none;
-  -webkit-user-drag: none;
-  -moz-user-drag: none;
-  -ms-user-drag: none;
-  user-drag: none;
 }
-.card img:hover{transform:scale(1.05);}
-
-@media(max-width:768px){
-  .card img{width:220px;height:350px;}
+.card img:hover{
+  transform:scale(1.05);
 }
 
-/* FOOTER */
+/* ===== ZOOM ===== */
+#zoomModal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(40,22,12,.95);
+  z-index:999;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+#zoomModal img{
+  max-width:85%;
+  max-height:85%;
+  transition:transform 0.3s;
+}
+#close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+}
+.controls button{
+  margin:10px 6px;
+  font-size:22px;
+  padding:10px 18px;
+  border:none;
+  border-radius:50%;
+  background:#c49b63;
+  color:#3a2416;
+  cursor:pointer;
+}
+
+/* NEXT/PREV BUTTONS IN ZOOM */
+#prev, #next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:50px;
+  color:#fff;
+  background:rgba(0,0,0,0.3);
+  border:none;
+  padding:10px 20px;
+  cursor:pointer;
+  border-radius:8px;
+  z-index:1001;
+}
+#prev{left:30px;}
+#next{right:30px;}
+
+/* ===== FOOTER ===== */
 .footer {
   position: relative;
   background: url("../images/footer-bg.jpg") center/cover no-repeat;
-  background-color: #6f4e37; /* fallback color */
   color: #f5e6d3;
   padding: 35px 0 15px;
   font-family: Cambria, serif;
@@ -128,8 +259,8 @@ header p{color:#f5e6d3;margin-top:3px;}
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    rgba(111, 74, 50, 0.95),
-    rgba(138, 94, 60, 0.95)
+    rgba(111, 74, 50, 0.6),
+    rgba(138, 94, 60, 0.6)
   );
   z-index: 1;
 }
@@ -140,7 +271,13 @@ header p{color:#f5e6d3;margin-top:3px;}
   margin: auto;
   padding: 0 15px;
 }
-.footer-top { display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; gap: 10px; }
+.footer-top { 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  flex-wrap: wrap; 
+  gap: 10px; 
+}
 .footer-logo h2 { margin:0 0 4px; font-size:18px; color:#f5e6d3; }
 .footer-logo p { margin:0; font-size:16px; color:#d6b27c; }
 .footer-socials span { font-size:16px; margin-right:8px; }
@@ -167,11 +304,19 @@ header p{color:#f5e6d3;margin-top:3px;}
 .footer-section p { margin:6px 0; font-size:16px; line-height:2; }
 .footer-map iframe { width:100%; height:140px; border-radius:8px; border:2px solid #d6b27c; }
 .footer-bottom { margin-top:15px; padding-top:10px; text-align:center; font-size:16px; border-top:1px solid rgba(245,230,211,0.3); }
+
+/* MOBILE */
+@media(max-width:768px){
+  .banner{height:280px;}
+  .banner-text h1{font-size:28px;}
+  .card img{width:220px;height:350px;}
+  .footer-top {flex-direction:column; gap:10px; text-align:center;}
+  .footer-grid {grid-template-columns:1fr; gap:15px;}
+}
 </style>
 </head>
 
 <body>
-
 <header>
   <h1>Dizz Henna Art</h1>
   <p>Mehandhi Artist | Melur & Madurai</p>
@@ -195,20 +340,28 @@ header p{color:#f5e6d3;margin-top:3px;}
   </ul>
 </nav>
 
+<section class="banner">
+  <img src="">
+  <div class="banner-text">
+    <h1>Elegant Mehndi Designs</h1>
+    <p>Arabic • Bridal • Traditional</p>
+  </div>
+</section>
+
 <h2 class="title">Our Latest Works</h2>
 
-<div class="scroll-wrapper" id="wrapper">
+<div class="scroll-wrapper">
   <div class="scroll-track">
-    <div class="card"><img src="Images/design1.png"></div>
-    <div class="card"><img src="Images/design2.png"></div>
-    <div class="card"><img src="Images/design3.png"></div>
-    <div class="card"><img src="Images/design4.png"></div>
-    <div class="card"><img src="Images/design5.png"></div>
-    <div class="card"><img src="Images/design6.png"></div>
-    <div class="card"><img src="Images/design7.png"></div>
-    <div class="card"><img src="Images/design8.png"></div>
-    <div class="card"><img src="Images/design9.png"></div>
-    <div class="card"><img src="Images/design1.png"></div>
+    <div class="card"><img src="Images/design1.png" alt="Design 1"></div>
+    <div class="card"><img src="Images/design2.png" alt="Design 2"></div>
+    <div class="card"><img src="Images/design3.png" alt="Design 3"></div>
+    <div class="card"><img src="Images/design4.png" alt="Design 4"></div>
+    <div class="card"><img src="Images/design5.png" alt="Design 5"></div>
+    <div class="card"><img src="Images/design6.png" alt="Design 6"></div>
+    <div class="card"><img src="Images/design7.png" alt="Design 7"></div>
+    <div class="card"><img src="Images/design8.png" alt="Design 8"></div>
+    <div class="card"><img src="Images/design9.png" alt="Design 9"></div>
+    <div class="card"><img src="Images/design1.png" alt="Design 10"></div>
   </div>
 </div>
 
@@ -216,7 +369,7 @@ header p{color:#f5e6d3;margin-top:3px;}
   <span id="close">&times;</span>
   <button id="prev">&#8249;</button>
   <button id="next">&#8250;</button>
-  <img id="zoomImg">
+  <img id="zoomImg" alt="Zoomed Design">
   <div class="controls">
     <button onclick="zoomIn()">+</button>
     <button onclick="zoomOut()">−</button>
@@ -224,104 +377,111 @@ header p{color:#f5e6d3;margin-top:3px;}
 </div>
 
 <script>
-/* ===================== AUTO SCROLL + DRAG ===================== */
-const wrapper = document.getElementById("wrapper");
-let isDown = false;
-let startX, scrollLeft;
-let autoScroll;
+let scale = 1;
+const modal = document.getElementById("zoomModal");
+const modalImg = document.getElementById("zoomImg");
+const images = document.querySelectorAll(".card img");
+let currentIndex = 0;
 
-// Auto-scroll function
-function startAutoScroll() {
-  stopAutoScroll();
-  autoScroll = setInterval(() => {
-    wrapper.scrollLeft += 0.5;
-    if(wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth){
-      wrapper.scrollLeft = 0;
-    }
-  }, 16); // smooth scroll
-}
-
-function stopAutoScroll(){
-  clearInterval(autoScroll);
-}
-
-/* Mouse Drag */
-wrapper.addEventListener("mousedown", (e) => {
-  isDown = true;
-  wrapper.style.cursor = "grabbing";
-  startX = e.pageX;
-  scrollLeft = wrapper.scrollLeft;
-  stopAutoScroll();
-});
-wrapper.addEventListener("mousemove", (e) => {
-  if(!isDown) return;
-  const walk = e.pageX - startX;
-  wrapper.scrollLeft = scrollLeft - walk;
-});
-window.addEventListener("mouseup", () => { 
-  if(isDown) {
-    isDown = false; 
-    wrapper.style.cursor = "grab"; 
-    startAutoScroll(); 
-  }
-});
-window.addEventListener("mouseleave", () => { 
-  if(isDown) {
-    isDown = false; 
-    wrapper.style.cursor = "grab"; 
-    startAutoScroll(); 
-  }
-});
-
-/* Touch Drag */
-wrapper.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].pageX;
-  scrollLeft = wrapper.scrollLeft;
-  stopAutoScroll();
-});
-wrapper.addEventListener("touchmove", (e) => {
-  const walk = e.touches[0].pageX - startX;
-  wrapper.scrollLeft = scrollLeft - walk;
-});
-wrapper.addEventListener("touchend", startAutoScroll);
-
-/* Start auto-scroll by default */
-startAutoScroll();
-
-/* ===================== ZOOM ===================== */
-let scale=1;
-const modal=document.getElementById("zoomModal");
-const modalImg=document.getElementById("zoomImg");
-const images=document.querySelectorAll(".card img");
-let currentIndex=0;
-
-images.forEach((img,index)=>{
-  img.addEventListener("click",()=>{
-    currentIndex=index;
-    modal.style.display="flex";
-    modalImg.src=img.src;
-    scale=1;
-    modalImg.style.transform="scale(1)";
+// Open zoom on image click
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    currentIndex = index;
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    scale = 1;
+    modalImg.style.transform = "scale(1)";
   });
 });
 
-document.getElementById("close").onclick=()=>modal.style.display="none";
-
-function zoomIn(){scale+=.2;modalImg.style.transform=`scale(${scale})`;}
-function zoomOut(){scale=Math.max(1,scale-.2);modalImg.style.transform=`scale(${scale})`;}
-
-document.getElementById("next").onclick=()=>{
-  currentIndex=(currentIndex+1)%images.length;
-  modalImg.src=images[currentIndex].src;
-  scale=1;
-  modalImg.style.transform=`scale(1)`;
+// Close zoom modal
+document.getElementById("close").onclick = () => {
+  modal.style.display = "none";
 };
-document.getElementById("prev").onclick=()=>{
-  currentIndex=(currentIndex-1+images.length)%images.length;
-  modalImg.src=images[currentIndex].src;
-  scale=1;
-  modalImg.style.transform=`scale(1)`;
+
+// Zoom controls
+function zoomIn() {
+  scale += 0.2;
+  modalImg.style.transform = `scale(${scale})`;
+}
+
+function zoomOut() {
+  scale = Math.max(1, scale - 0.2);
+  modalImg.style.transform = `scale(${scale})`;
+}
+
+// Next and Prev buttons in zoom
+document.getElementById("next").onclick = () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  modalImg.src = images[currentIndex].src;
+  scale = 1;
+  modalImg.style.transform = "scale(1)";
 };
+
+document.getElementById("prev").onclick = () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  modalImg.src = images[currentIndex].src;
+  scale = 1;
+  modalImg.style.transform = "scale(1)";
+};
+
+// SCROLLING AND DRAGGING FUNCTIONALITY
+const wrapper = document.querySelector(".scroll-wrapper");
+
+let isDragging = false;
+let startX;
+let scrollLeft;
+let autoScrollInterval;
+
+// Start automatic scrolling
+function startAutoScroll() {
+  stopAutoScroll();
+  autoScrollInterval = setInterval(() => {
+    wrapper.scrollLeft += 0.6;
+    if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth) {
+      wrapper.scrollLeft = 0;
+    }
+  }, 16);
+}
+
+// Stop automatic scrolling
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
+
+startAutoScroll();
+
+// Mouse drag to scroll
+wrapper.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.pageX - wrapper.offsetLeft;
+  scrollLeft = wrapper.scrollLeft;
+  stopAutoScroll();
+  wrapper.style.cursor = "grabbing";
+});
+
+window.addEventListener("mouseup", () => {
+  if (!isDragging) return;
+  isDragging = false;
+  startAutoScroll();
+  wrapper.style.cursor = "grab";
+});
+
+wrapper.addEventListener("mouseleave", () => {
+  if (isDragging) {
+    isDragging = false;
+    startAutoScroll();
+    wrapper.style.cursor = "grab";
+  }
+});
+
+wrapper.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  const x = e.pageX - wrapper.offsetLeft;
+  const walk = (x - startX) * 1.8; // scroll-fast multiplier
+  wrapper.scrollLeft = scrollLeft - walk;
+});
 </script>
 
 <footer class="footer">
@@ -363,7 +523,7 @@ document.getElementById("prev").onclick=()=>{
       <div class="footer-section">
         <h3>Contact Us</h3>
         <p><i class="fas fa-phone"></i> +91 94429 10175</p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:dizzhennaart@gmail.com">dizzhennaart@gmail.com</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:dizzhennaart@gmail.com" class="email-link">dizzhennaart@gmail.com</a></p>
         <p><i class="fas fa-map-marker-alt"></i> Melur & Madurai, Tamil Nadu</p>
       </div>
       <div class="footer-section footer-map">
@@ -373,6 +533,5 @@ document.getElementById("prev").onclick=()=>{
     <div class="footer-bottom">© 2026. All rights reserved.</div>
   </div>
 </footer>
-
 </body>
 </html>

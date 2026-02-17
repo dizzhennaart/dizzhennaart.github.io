@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <style>
-/* ===== YOUR ORIGINAL CSS (UNCHANGED) ===== */
 body{
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -104,43 +103,6 @@ a {
   display: block;
 }
 
-/* BANNER */
-.banner{
-  position:relative;
-  height:420px;
-  overflow:hidden;
-}
-.banner img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.banner::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(58,36,22,0.55);
-}
-.banner-text{
-  position:absolute;
-  inset:0;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  color:#f6efe8;
-  text-align:center;
-}
-.banner-text h1{
-  font-size:44px;
-  margin-bottom:8px;
-}
-.banner-text p{
-  font-size:18px;
-  color:#e6cfa5;
-}
-
 .title{
   text-align:center;
   font-size:32px;
@@ -154,6 +116,7 @@ a {
   padding:20px 40px 60px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width:none;
+  cursor: grab;
 }
 .scroll-wrapper::-webkit-scrollbar{
   display:none;
@@ -228,8 +191,6 @@ a {
 #next{right:30px;}
 
 @media(max-width:768px){
-  .banner{height:280px;}
-  .banner-text h1{font-size:28px;}
   .card img{width:220px;height:300px;}
 }
 </style>
@@ -318,35 +279,40 @@ function autoScroll(){
 }
 autoScroll();
 
-/* DRAG */
-let isDown=false,startX,scrollLeft;
+/* DRAG ONLY WHEN CLICK + HOLD */
+let isDragging=false;
+let startX=0;
+let startScrollLeft=0;
 
-wrapper.addEventListener("mousedown",e=>{
+wrapper.addEventListener("mousedown",(e)=>{
+  isDragging=true;
   cancelAnimationFrame(animation);
-  isDown=true;
-  startX=e.pageX;
-  scrollLeft=wrapper.scrollLeft;
+  startX=e.clientX;
+  startScrollLeft=wrapper.scrollLeft;
 });
 
-wrapper.addEventListener("mouseup",()=>{isDown=false;autoScroll();});
-wrapper.addEventListener("mouseleave",()=>{if(isDown){isDown=false;autoScroll();}});
-
-wrapper.addEventListener("mousemove",e=>{
-  if(!isDown)return;
+wrapper.addEventListener("mousemove",(e)=>{
+  if(!isDragging)return;
   e.preventDefault();
-  const walk=(e.pageX-startX)*2;
-  wrapper.scrollLeft=scrollLeft-walk;
+  const distance=e.clientX-startX;
+  wrapper.scrollLeft=startScrollLeft-distance;
 });
 
-/* TOUCH */
-wrapper.addEventListener("touchstart",e=>{
-  cancelAnimationFrame(animation);
-  startX=e.touches[0].pageX;
-  scrollLeft=wrapper.scrollLeft;
+window.addEventListener("mouseup",()=>{
+  if(!isDragging)return;
+  isDragging=false;
+  autoScroll();
 });
-wrapper.addEventListener("touchmove",e=>{
-  const walk=(e.touches[0].pageX-startX)*2;
-  wrapper.scrollLeft=scrollLeft-walk;
+
+/* TOUCH SUPPORT */
+wrapper.addEventListener("touchstart",(e)=>{
+  cancelAnimationFrame(animation);
+  startX=e.touches[0].clientX;
+  startScrollLeft=wrapper.scrollLeft;
+});
+wrapper.addEventListener("touchmove",(e)=>{
+  const distance=e.touches[0].clientX-startX;
+  wrapper.scrollLeft=startScrollLeft-distance;
 });
 wrapper.addEventListener("touchend",()=>autoScroll());
 

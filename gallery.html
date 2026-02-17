@@ -94,7 +94,7 @@ header p{color:#f5e6d3;margin-top:3px;}
 
 .card img{
   width:280px;
-  height:380px;
+  height:420px; /* increased height for longer images */
   object-fit:cover;
   border-radius:22px;
   cursor:zoom-in;
@@ -153,7 +153,7 @@ header p{color:#f5e6d3;margin-top:3px;}
 #next{right:30px;}
 
 @media(max-width:768px){
-  .card img{width:220px;height:300px;}
+  .card img{width:220px;height:350px;}
 }
 </style>
 </head>
@@ -197,12 +197,6 @@ header p{color:#f5e6d3;margin-top:3px;}
     <div class="card"><img src="Images/design8.png"></div>
     <div class="card"><img src="Images/design9.png"></div>
     <div class="card"><img src="Images/design1.png"></div>
-    <div class="card"><img src="Images/design2.png"></div>
-    <div class="card"><img src="Images/design3.png"></div>
-    <div class="card"><img src="Images/design4.png"></div>
-    <div class="card"><img src="Images/design5.png"></div>
-    <div class="card"><img src="Images/design6.png"></div>
-    <div class="card"><img src="Images/design7.png"></div>
   </div>
 </div>
 
@@ -218,45 +212,57 @@ header p{color:#f5e6d3;margin-top:3px;}
 </div>
 
 <script>
-/* ===================== PURE CLICK & DRAG ===================== */
+/* ===================== AUTO SCROLL + DRAG ===================== */
 const wrapper = document.getElementById("wrapper");
 let isDown = false;
-let startX;
-let scrollLeft;
+let startX, scrollLeft;
+let autoScroll;
 
+// Auto-scroll function
+function startAutoScroll() {
+  stopAutoScroll();
+  autoScroll = setInterval(() => {
+    wrapper.scrollLeft += 0.5;
+    if(wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth){
+      wrapper.scrollLeft = 0;
+    }
+  }, 16); // smooth scroll
+}
+
+function stopAutoScroll(){
+  clearInterval(autoScroll);
+}
+
+/* Mouse Drag */
 wrapper.addEventListener("mousedown", (e) => {
   isDown = true;
   wrapper.style.cursor = "grabbing";
   startX = e.pageX;
   scrollLeft = wrapper.scrollLeft;
+  stopAutoScroll();
 });
-
 wrapper.addEventListener("mousemove", (e) => {
   if(!isDown) return;
-  e.preventDefault();
   const walk = e.pageX - startX;
   wrapper.scrollLeft = scrollLeft - walk;
 });
+wrapper.addEventListener("mouseup", () => { isDown=false; wrapper.style.cursor="grab"; startAutoScroll(); });
+wrapper.addEventListener("mouseleave", () => { isDown=false; wrapper.style.cursor="grab"; startAutoScroll(); });
 
-wrapper.addEventListener("mouseup", () => {
-  isDown = false;
-  wrapper.style.cursor = "grab";
-});
-
-wrapper.addEventListener("mouseleave", () => {
-  isDown = false;
-  wrapper.style.cursor = "grab";
-});
-
-/* TOUCH SUPPORT */
+/* Touch Drag */
 wrapper.addEventListener("touchstart", (e) => {
   startX = e.touches[0].pageX;
   scrollLeft = wrapper.scrollLeft;
+  stopAutoScroll();
 });
 wrapper.addEventListener("touchmove", (e) => {
   const walk = e.touches[0].pageX - startX;
   wrapper.scrollLeft = scrollLeft - walk;
 });
+wrapper.addEventListener("touchend", startAutoScroll);
+
+/* Start auto-scroll by default */
+startAutoScroll();
 
 /* ===================== ZOOM ===================== */
 let scale=1;

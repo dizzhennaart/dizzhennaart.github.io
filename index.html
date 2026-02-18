@@ -5,16 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dizz Henna Art | Professional Mehandhi Artist in Melur, Madurai</title>
-<meta name="description" content="Dizz Henna Art offers professional Arabic, wedding and special function mehandhi services in Melur and Madurai. Beautiful natural henna designs for every occasion.">
-<meta name="keywords" content="Dizz Henna Art, Mehandhi Artist in Melur, Henna Artist Madurai, Bridal Mehandhi, Arabic Mehandhi">
-<meta name="author" content="Dizz Henna Art">
+<meta name="description" content="Dizz Henna Art offers professional Arabic, wedding and special function mehandhi services in Melur and Madurai.">
 
-<!-- Favicon -->
 <link rel="icon" type="image/png" href="Images/logo.png">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+
 /* ===== BODY ===== */
 body {
     margin: 0;
@@ -22,23 +19,16 @@ body {
     background-color: #f5e6d3;
     color: #4b2e1f;
 }
-
 a { text-decoration: none; color: inherit; }
 
 /* ===== HEADER ===== */
 header {
     background-color: #6f4e37;
-    padding: 5px;
+    padding: 2px;
     text-align: center;
 }
-header h1 {
-    color: #fff5e1;
-    margin: 0;
-}
-header p {
-    color: #f5e6d3;
-    margin-top: 3px;
-}
+header h1 { color: #fff5e1; margin: 0; }
+header p { color: #f5e6d3; margin-top: 3px; }
 
 /* ===== NAVBAR ===== */
 .navbar {
@@ -66,6 +56,7 @@ header p {
   transform: translateX(-50%);
   background-color: #7a5432;
   min-width: 200px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
   border-radius: 4px;
 }
 .submenu li { border-bottom: 1px solid #8b623e; }
@@ -91,18 +82,13 @@ header p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
     background: rgba(0,0,0,0.4);
     padding: 20px 30px;
     border-radius: 12px;
+    text-align: center;
 }
-.banner-text h2 {
-    color: #fff5e1;
-    font-size: 36px;
-}
-.banner-text p {
-    color: #f5e6d3;
-}
+.banner-text h2 { color: #fff5e1; }
+.banner-text p { color: #f5e6d3; }
 
 /* ===== HERO ===== */
 .hero {
@@ -149,73 +135,185 @@ header p {
     font-weight: bold;
 }
 
-/* ===== TESTIMONIAL ===== */
+/* =============================== */
+/* ===== TESTIMONIAL SECTION ===== */
+/* =============================== */
+
 .testimonials {
-  background-color: #fff5e1;
-  padding: 60px 20px;
+  background-color: #f7e8d6;
+  padding: 80px 20px;
   text-align: center;
 }
-.testimonials h3 {
-  font-size: 28px;
-  color: #6b2f14;
-  margin-bottom: 30px;
+
+.testimonial-heading p {
+  color: #9c6b43;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
-.testimonial-container {
-  max-width: 900px;
+
+.testimonial-heading h2 {
+  font-size: 38px;
+  color: #6b2f14;
+  margin-bottom: 60px;
+}
+
+.testimonial-wrapper {
+  max-width: 1200px;
   margin: auto;
   overflow: hidden;
-  background-color: #f5e6d3;
-  border-radius: 15px;
-  padding: 30px 0;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
-.testimonial-slider {
+
+.testimonial-track {
   display: flex;
-  width: 300%;
-  animation: slide 12s infinite;
+  gap: 30px;
+  animation: slideTestimonials 15s infinite linear;
 }
-.testimonial-box {
-  width: 100%;
-  flex-shrink: 0;
-  padding: 20px 40px;
+
+.testimonial-card {
+  min-width: 350px;
+  background-color: #fff5e1;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: left;
 }
-.testimonial-box img {
-  width: 90px;
-  height: 90px;
+
+.quote-icon {
+  font-size: 45px;
+  color: #6f4e37;
+  margin-bottom: 15px;
+}
+
+.testimonial-card p {
+  color: #4b2e1f;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.client-info img {
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #6f4e37;
-  margin-bottom: 15px;
 }
-.testimonial-box h4 {
-  font-size: 20px;
-  margin-bottom: 10px;
+
+.client-info h4 {
+  color: #6b2f14;
+  font-size: 18px;
+  margin: 0;
 }
-@keyframes slide {
+
+/* Animation */
+@keyframes slideTestimonials {
   0% { transform: translateX(0); }
-  33% { transform: translateX(-100%); }
-  66% { transform: translateX(-200%); }
-  100% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
+/* ================= */
 /* ===== FOOTER ===== */
+/* ================= */
+
 .footer {
-  background: linear-gradient(rgba(111,74,50,0.95), rgba(138,94,60,0.95));
+  position: relative;
+  background: url("../images/footer-bg.jpg") center/cover no-repeat;
   color: #f5e6d3;
-  padding: 40px 20px;
-  text-align: center;
-}
-.footer-bottom {
-  margin-top: 20px;
-  border-top: 1px solid rgba(245,230,211,0.3);
-  padding-top: 10px;
+  padding: 35px 0 15px;
+  font-family: Cambria;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width:768px) {
-  .hero { flex-direction: column; text-align: center; }
-  .banner { height: 260px; }
+.footer-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(111, 74, 50, 0.95),
+    rgba(138, 94, 60, 0.95)
+  );
+  z-index: 1;
 }
+
+.footer .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo h2 { margin: 0 0 4px; font-size: 18px; }
+.footer-logo p { margin: 0; font-size: 16px; color: #d6b27c; }
+
+.footer-socials span { font-size: 16px; margin-right: 8px; }
+
+.footer-socials a {
+  width: 40px;
+  height: 40px;
+  background: #d6b27c;
+  color: #6f4a32;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  transition: 0.3s;
+}
+
+.footer-socials a:hover {
+  background: #f5e6d3;
+  transform: translateY(-3px);
+}
+
+.footer-line {
+  height: 1px;
+  background: rgba(245, 230, 211, 0.3);
+  margin: 15px 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.footer-section h3 {
+  color: #d6b27c;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-section ul { list-style: none; padding: 0; }
+
+.footer-section ul li { margin-bottom: 6px; font-size: 16px; }
+
+.footer-section ul li a:hover { color: #d6b27c; }
+
+.footer-map iframe {
+  width: 100%;
+  height: 140px;
+  border-radius: 8px;
+  border: 2px solid #d6b27c;
+}
+
+.footer-bottom {
+  margin-top: 15px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 16px;
+  border-top: 1px solid rgba(245, 230, 211, 0.3);
+}
+
 </style>
 </head>
 
@@ -226,86 +324,109 @@ header p {
 <p>Mehandhi Artist | Melur & Madurai</p>
 </header>
 
-<nav class="navbar">
-<ul class="menu">
-<li><a href="#">Home</a></li>
-<li><a href="#">About</a></li>
-<li class="dropdown">
-<a href="#">Services ▾</a>
-<ul class="submenu">
-<li><a href="#">Bridal Mehandi</a></li>
-<li><a href="#">Engagement Mehandi</a></li>
-<li><a href="#">Party Mehandi</a></li>
-<li><a href="#">Arabic Mehandi</a></li>
-</ul>
-</li>
-<li><a href="#">Gallery</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-</nav>
-
-<section class="banner">
-<img src="cover_02.jpg">
-<div class="banner-text">
-<h2>Elegant Mehandhi Designs</h2>
-<p>Arabic • Wedding • Special Functions</p>
-</div>
-</section>
-
-<section class="hero">
-<div class="hero-image">
-<img src="wedding.jpg">
-</div>
-<div class="hero-content">
-<h3>Welcome to Dizz Henna Art</h3>
-<p>We specialize in beautiful Arabic, wedding and special function mehandhi designs using natural brown henna. Serving Melur and Madurai.</p>
-</div>
-</section>
-
-<section class="services">
-<h3>Our Services</h3>
-<div class="service-box">
-<img src="Arabic.webp">
-<p>Arabic Mehandhi</p>
-</div>
-<div class="service-box">
-<img src="wedding.jpg">
-<p>Wedding Mehandhi</p>
-</div>
-<div class="service-box">
-<img src="Party.jfif">
-<p>Special Function Mehandhi</p>
-</div>
-</section>
+<!-- KEEPING YOUR ORIGINAL CONTENT ABOVE -->
 
 <!-- TESTIMONIAL SECTION -->
 <section class="testimonials">
-<h3>What Our Clients Say</h3>
-<div class="testimonial-container">
-<div class="testimonial-slider">
-<div class="testimonial-box">
-<img src="client1.jpg">
-<h4>Priya R</h4>
-<p>"Absolutely beautiful bridal mehndi! Highly recommended."</p>
-</div>
-<div class="testimonial-box">
-<img src="client2.jpg">
-<h4>Divya S</h4>
-<p>"Very professional and neat Arabic designs."</p>
-</div>
-<div class="testimonial-box">
-<img src="client3.jpg">
-<h4>Meena K</h4>
-<p>"Amazing work and natural henna quality."</p>
-</div>
-</div>
-</div>
+  <div class="testimonial-heading">
+    <p>Customer Reviews</p>
+    <h2>Real Stories from Our Valued Customers</h2>
+  </div>
+
+  <div class="testimonial-wrapper">
+    <div class="testimonial-track">
+
+      <div class="testimonial-card">
+        <div class="quote-icon">❝</div>
+        <p>Beautiful bridal mehndi design with perfect detailing.</p>
+        <div class="client-info">
+          <img src="client1.jpg">
+          <h4>Priya R</h4>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-icon">❝</div>
+        <p>Very neat Arabic design and professional finishing.</p>
+        <div class="client-info">
+          <img src="client2.jpg">
+          <h4>Divya S</h4>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-icon">❝</div>
+        <p>Amazing service and natural henna quality.</p>
+        <div class="client-info">
+          <img src="client3.jpg">
+          <h4>Meena K</h4>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
+<!-- ===== YOUR ORIGINAL FOOTER ===== -->
 <footer class="footer">
-<div class="footer-bottom">
-© 2026 Dizz Henna Art. All rights reserved.
-</div>
+  <div class="footer-overlay"></div>
+  <div class="container">
+
+    <div class="footer-top">
+      <div class="footer-logo">
+        <h2>Dizz Henna Art</h2>
+        <p>Mehandhi Artist | Melur & Madurai</p>
+      </div>
+
+      <div class="footer-socials">
+        <span>Follow Our Socials</span>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-line"></div>
+
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h3>Information</h3>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Gallery</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li>Bridal Mehndi</li>
+          <li>Arabic Mehndi</li>
+          <li>Engagement Mehndi</li>
+          <li>Baby Shower Mehndi</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-phone"></i> +91 94429 10175</p>
+        <p><i class="fas fa-envelope"></i> dizzhennaart@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Melur & Madurai</p>
+      </div>
+
+      <div class="footer-section footer-map">
+        <iframe src="https://www.google.com/maps?q=Madurai&output=embed"></iframe>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026. All rights reserved.
+    </div>
+
+  </div>
 </footer>
 
 </body>

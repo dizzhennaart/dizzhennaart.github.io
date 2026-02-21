@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<link rel="icon" type="image/png" href="Images/logo1.png">
+<link rel="icon" type="image/png" href="Images/logoo.png">
     <!-- SEO Meta Tags -->
     <title>Dizz Henna Art | Professional Mehandhi Artist in Melur, Madurai</title>
     <meta name="description" content="Dizz Henna Art offers professional Arabic, wedding and special function mehandhi services in Melur and Madurai. Beautiful natural henna designs for every occasion.">
@@ -19,7 +19,6 @@
             background-color: #f5e6d3;
             color: #4b2e1f;
         }
-
 header {
   display: flex;
   justify-content: space-between;
@@ -27,27 +26,47 @@ header {
   background-color: #6f4e37;
   padding: 12px 40px;
   color: #fff5e1;
-  gap: 20px;
   flex-wrap: wrap;
+  min-height: 60px;
 }
 
-.header-left h1 {
+.header-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.header-center {
+  flex: 2;
+  text-align: center;
+}
+
+.header-center h1 {
   margin: 0;
   font-weight: bold;
   font-size: 24px;
+  line-height: 1.1;
 }
 
-.header-left p {
+.header-center p {
   margin: 4px 0 0 0;
   font-size: 14px;
   color: #f5e6d3;
 }
 
 .header-right {
+  flex: 1;
   display: flex;
-  gap: 25px;
+  flex-direction: column;
+  align-items: flex-end;
   font-size: 14px;
   color: #f5e6d3;
+  gap: 4px;
 }
 
 .header-right p {
@@ -60,6 +79,23 @@ header {
 .header-right i {
   color: #d6b27c;
   font-size: 16px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+  }
+  .header-left, .header-center, .header-right {
+    flex: none;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .header-right {
+    align-items: center;
+  }
 }
 
 		a {
@@ -490,20 +526,6 @@ header {
 }
 
 
-@media(max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-
-  .header-right {
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-  }
-}
-
         /* Mobile Friendly */
         @media (max-width: 768px) {
             .banner {
@@ -526,6 +548,10 @@ header {
 
 <header>
   <div class="header-left">
+    <!-- Put your logo image or icon here -->
+    <img src="Images/logo.png" alt="Dizz Henna Art Logo" class="logo">
+  </div>
+  <div class="header-center">
     <h1>Dizz Henna Art</h1>
     <p>Mehandhi Artist | Melur & Madurai</p>
   </div>

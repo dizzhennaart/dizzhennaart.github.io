@@ -20,16 +20,47 @@
             color: #4b2e1f;
         }
 
-        header {
-            background-color: #6f4e37;
-            padding: 2px;
-            text-align: center;
-        }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6f4e37;
+  padding: 12px 40px;
+  color: #fff5e1;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-        header h1 {
-            color: #fff5e1;
-            margin: 0;
-        }
+.header-left h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.header-left p {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #f5e6d3;
+}
+
+.header-right {
+  display: flex;
+  gap: 25px;
+  font-size: 14px;
+  color: #f5e6d3;
+}
+
+.header-right p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-right i {
+  color: #d6b27c;
+  font-size: 16px;
+}
 
 		a {
   color: inherit;
@@ -459,7 +490,19 @@
 }
 
 
+@media(max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
 
+  .header-right {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+}
 
         /* Mobile Friendly */
         @media (max-width: 768px) {
@@ -482,8 +525,14 @@
 <body>
 
 <header>
+  <div class="header-left">
     <h1>Dizz Henna Art</h1>
     <p>Mehandhi Artist | Melur & Madurai</p>
+  </div>
+  <div class="header-right">
+    <p><i class="fas fa-phone"></i> +91 94429 10175</p>
+    <p><i class="fas fa-map-marker-alt"></i> Melur & Madurai, Tamil Nadu</p>
+  </div>
 </header>
 
 	<nav class="navbar">

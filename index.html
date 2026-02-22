@@ -206,15 +206,15 @@ body {
     transition: transform 0.6s ease-in-out;
 }
 
-.slide {
+.slider {
     width: 100%;
-    flex-shrink: 0;
+    overflow: hidden;
 }
 
 .slide img {
     width: 100%;
-    height: 500px;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
 
 /* Navigation Buttons */
@@ -590,44 +590,6 @@ body {
 
 <body>
 
-	<script>
-	let index = 0;
-let slides = document.getElementById("slideContainer");
-let totalSlides = 3;
-let direction = 1; // 1 = forward, -1 = backward
-
-function showSlide() {
-    slides.style.transform = "translateX(" + (-index * 100) + "%)";
-}
-
-function nextSlide() {
-    if (index >= totalSlides - 1) {
-        direction = -1;
-    }
-    index += direction;
-    showSlide();
-}
-
-function prevSlide() {
-    if (index <= 0) {
-        direction = 1;
-    }
-    index += direction * -1;
-    showSlide();
-}
-
-// Automatic Sliding (Left → Right → Left)
-setInterval(() => {
-    if (index >= totalSlides - 1) {
-        direction = -1;
-    }
-    if (index <= 0) {
-        direction = 1;
-    }
-    index += direction;
-    showSlide();
-}, 3000);
-	</script>
 	
 <header>
   <div class="header-left">
@@ -899,6 +861,44 @@ with a fresh, natural touch</p>
 </footer>
 
 
+	<script>
+	let index = 0;
+let slides = document.getElementById("slideContainer");
+let totalSlides = 3;
+let direction = 1; // 1 = forward, -1 = backward
+
+function showSlide() {
+    slides.style.transform = "translateX(" + (-index * 100) + "%)";
+}
+
+function nextSlide() {
+    if (index >= totalSlides - 1) {
+        direction = -1;
+    }
+    index += direction;
+    showSlide();
+}
+
+function prevSlide() {
+    if (index <= 0) {
+        direction = 1;
+    }
+    index += direction * -1;
+    showSlide();
+}
+
+// Automatic Sliding (Left → Right → Left)
+setInterval(() => {
+    if (index >= totalSlides - 1) {
+        direction = -1;
+    }
+    if (index <= 0) {
+        direction = 1;
+    }
+    index += direction;
+    showSlide();
+}, 3000);
+	</script>
 
 
 </body>

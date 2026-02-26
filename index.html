@@ -1,323 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dizz Henna Art | Professional Mehandhi Artist</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<link rel="icon" type="image/png" href="Images/logo.png">
-    <!-- SEO Meta Tags -->
-    <title>Dizz Henna Art | Professional Mehandhi Artist in Melur, Madurai</title>
-    <meta name="description" content="Dizz Henna Art offers professional Arabic, wedding and special function mehandhi services in Melur and Madurai. Beautiful natural henna designs for every occasion.">
-    <meta name="keywords" content="Dizz Henna Art, Mehandhi Artist in Melur, Henna Artist Madurai, Bridal Mehandhi, Arabic Mehandhi">
-    <meta name="author" content="Dizz Henna Art">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f5e6d3;
-            color: #4b2e1f;
-        }
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #6f4e37;
-  padding: 12px 40px;
-  color: #fff5e1;
-  flex-wrap: wrap;
-  min-height: 60px;
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-.header-left {
-  flex: 1;
-  display: flex;
-  align-items: center;
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background:#f5e6d3;
+  color:#4b2e1f;
 }
 
-.logo {
-  height: 50px;
-  width: auto;
+/* ================= HEADER ================= */
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#6f4e37;
+  padding:15px 40px;
+  color:#fff5e1;
+  flex-wrap:wrap;
 }
 
-.header-center {
-  flex: 2;
-  text-align: center;
+.logo{
+  height:50px;
 }
 
-.header-center h1 {
-  margin: 0;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 1.1;
+.header-center{
+  text-align:center;
 }
 
-.header-center p {
-  margin: 4px 0 0 0;
-  font-size: 14px;
-  color: #f5e6d3;
+.header-center h1{
+  font-size:24px;
 }
 
-.header-right {
-  flex: 1;
-  display: flex;
-  align-items: center;   /* Align vertically */
-  justify-content: flex-end; /* Align content to the right */
-  font-size: 14px;
-  color: #f5e6d3;
-  gap: 20px;  /* Space between the phone number and address */
-  white-space: nowrap; /* Prevent wrapping */
+.header-center p{
+  font-size:14px;
+  margin-top:4px;
 }
 
-.header-right p {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap; /* Prevent wrapping of text inside p */
+.header-right{
+  display:flex;
+  gap:20px;
+  font-size:14px;
 }
 
-.header-right i {
-  color: #d6b27c;
-  font-size: 16px;
+/* ================= NAVBAR ================= */
+
+.navbar{
+  background:#6b4a2d;
+  padding:12px 40px;
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 20px;
+.menu{
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+}
+
+.menu a{
+  color:#fff;
+  text-decoration:none;
+  font-size:18px;
+}
+
+/* ================= SLIDER ================= */
+
+.slider{
+  position:relative;
+  width:100%;
+  height:500px;
+  overflow:hidden;
+}
+
+.slides{
+  display:flex;
+  height:100%;
+  transition:transform 0.8s ease-in-out;
+}
+
+.slide{
+  min-width:100%;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:contain; /* FULL IMAGE SHOW */
+}
+
+.banner-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(0,0,0,0.4);
+  padding:20px 30px;
+  border-radius:12px;
+  text-align:center;
+  color:#fff;
+}
+
+.banner-text h2{
+  font-size:36px;
+}
+
+.banner-text p{
+  margin-top:8px;
+}
+
+/* BUTTONS */
+
+.prev,.next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.5);
+  color:#fff;
+  border:none;
+  padding:10px 15px;
+  font-size:20px;
+  cursor:pointer;
+}
+
+.prev{left:15px;}
+.next{right:15px;}
+
+.prev:hover,.next:hover{
+  background:rgba(0,0,0,0.8);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:50px;
+  padding:60px 40px;
+  background:#f7e8d6;
+  flex-wrap:wrap;
+}
+
+.hero-image img{
+  width:100%;
+  max-width:500px;
+  border-radius:20px;
+}
+
+.hero-content{
+  max-width:600px;
+}
+
+.hero-content h3{
+  font-size:28px;
+  color:#6b2f14;
+  margin-bottom:15px;
+}
+
+.hero-content p{
+  line-height:1.8;
+  margin-bottom:10px;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+  background:#fff5e1;
+  padding:50px 20px;
+  text-align:center;
+}
+
+.services h3{
+  font-size:28px;
+  margin-bottom:30px;
+}
+
+.service-box{
+  display:inline-block;
+  width:260px;
+  margin:15px;
+  background:#f5e6d3;
+  padding:15px;
+  border-radius:12px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.15);
+}
+
+.service-box img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.service-box p{
+  margin-top:12px;
+  font-weight:bold;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+  .slider{
+    height:300px;
   }
-  .header-left, .header-center, .header-right {
-    flex: none;
-    text-align: center;
-    margin-bottom: 10px;
+
+  .banner-text h2{
+    font-size:22px;
   }
-  .header-right {
-    align-items: center;
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
   }
-}
 
-		a {
-  color: inherit;
-  text-decoration: none;
-}
+  .menu{
+    flex-direction:column;
+    gap:15px;
+  }
 
-		.email-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-        header p {
-            color: #f5e6d3;
-            margin-top: 3px;
-        }
-
-/* Basic reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.navbar {
-  background-color: #6b4a2d;
-  padding: 10px 40px;
-}
-
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  justify-content: center;   /* ADD THIS */
-}
-
-
-.menu li {
-  position: relative;
-}
-
-.menu a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px 0;
-  display: block;
-}
-
-/* Submenu */
-.submenu {
-  display: none;
-  position: absolute;
-  list-style: none;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #7a5432;
-  min-width: 200px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  border-radius: 4px;
-  z-index: 1000;
-}
-
-.submenu li {
-  border-bottom: 1px solid #8b623e;
-}
-
-.submenu li:last-child {
-  border-bottom: none;
-}
-
-.submenu a {
-  padding: 12px 15px;
-  color: #fff;
-}
-
-/* Hover effect */
-.submenu a:hover {
-  background-color: #9c6b43;
-}
-
-/* SHOW MENU ON HOVER */
-.dropdown:hover .submenu {
-  display: block;
-}
-
-
-        /* ===== Banner Image ===== */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.slider {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    width: 300%;
-    transition: transform 0.6s ease-in-out;
-}
-
-.slider {
-    width: 100%;
-    overflow: hidden;
-}
-
-.slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Navigation Buttons */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-.prev:hover, .next:hover {
-    background: rgba(0,0,0,0.8);
-}
-
-        .banner-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            background: rgba(0,0,0,0.4);
-            padding: 20px 30px;
-            border-radius: 12px;
-        }
-
-        .banner-text h2 {
-            color: #fff5e1;
-            font-size: 36px;
-            margin: 0;
-        }
-
-        .banner-text p {
-            color: #f5e6d3;
-            font-size: 18px;
-            margin-top: 8px;
-        }
-
-.hero {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 60px;
-    background-color: #f7e8d6;
-}
-
-.hero-image img {
-    width: 160%;
-    max-width: 600px;
-    border-radius: 30px;
-	  margin-left: 70px; 
-}
-
-.hero-content h3 {
-    color: #6b2f14;
-    font-size: 28px;
-	    line-height: 3.6;
-	 margin-left: 300px; 
-}
-
-.hero-content p {
-    color: #5a3a2a;
-    line-height: 2.6;
-	margin-left: 300px; 
-}
-
-
-.services {
-    background-color: #fff5e1;
-    padding: 40px 20px;
-    text-align: center;
-	 font-size: 24px;
-}
-
-.service-box {
-    display: inline-block;
-    background-color: #f5e6d3;
-    padding: 15px;
-    margin: 12px;
-    width: 260px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
-}
-
-.service-box img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.service-box p {
-    margin-top: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #4b2e1f;
 }
 
 /* ===== TESTIMONIAL SECTION ===== */
@@ -585,107 +500,108 @@ body {
         text-align: center;
     }
         }
-    </style>
+</style>
 </head>
 
 <body>
 
-	
+<!-- ================= HEADER ================= -->
+
 <header>
-  <div class="header-left">
-    <!-- Put your logo image or icon here -->
-    <img src="Images/logoo.png" alt="Dizz Henna Art Logo" class="logo">
-  </div>
+  <img src="Images/logoo.png" class="logo">
+
   <div class="header-center">
     <h1>Dizz Henna Art</h1>
     <p>Mehandhi Artist | Melur & Madurai</p>
   </div>
+
   <div class="header-right">
-    <p><i class="fas fa-phone"></i>  <a href="tel:+918110015288" style="color: inherit; text-decoration: none;"></a> +91 81100 15288</p>
-    <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/?api=1&query=Melur%20&%20Madurai%2C%20Tamil%20Nadu" target="_blank" style="color: inherit; text-decoration: none;"></a> Melur & Madurai, Tamil Nadu</p>
+    <p><i class="fas fa-phone"></i> +91 81100 15288</p>
+    <p><i class="fas fa-map-marker-alt"></i> Melur & Madurai</p>
   </div>
 </header>
 
-	<nav class="navbar">
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
   <ul class="menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-
-    <li class="dropdown">
-      <a href="#">Services ▾</a>
-      <ul class="submenu">
-        <li><a href="#">Bridal Mehandi</a></li>
-        <li><a href="#">Engagement Mehandi</a></li>
-        <li><a href="#">Party Mehandi</a></li>
-        <li><a href="#">Arabic Mehandi</a></li>
-      </ul>
-    </li>
-
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Contact</a></li>
   </ul>
 </nav>
 
+<!-- ================= SLIDER ================= -->
+
 <div class="slider">
-    <div class="slides" id="slideContainer">
-        <div class="slide">
-            <img src="cover_02.jpg" alt="Banner 1">
-			    <div class="banner-text">
+  <div class="slides" id="slideContainer">
+
+    <div class="slide">
+      <img src="cover_02.jpg">
+      <div class="banner-text">
         <h2>Elegant Mehandhi Designs</h2>
-        <p>•Arabic
-            • Wedding 
-            • Special Functions</p>
+        <p>Arabic • Wedding • Special Functions</p>
+      </div>
     </div>
-        </div>
-        <div class="slide">
-            <img src="Images/coverimage02.png" alt="Banner 2">
-        </div>
-        <div class="slide">
-            <img src="Images/coverimage03.png" alt="Banner 3">
-        </div>
+
+    <div class="slide">
+      <img src="Images/coverimage02.png">
     </div>
-    <!-- Navigation Buttons -->
-    <button class="prev" onclick="prevSlide()">❮</button>
-    <button class="next" onclick="nextSlide()">❯</button>
+
+    <div class="slide">
+      <img src="Images/coverimage03.png">
+    </div>
+
+  </div>
+
+  <button class="prev" onclick="prevSlide()">❮</button>
+  <button class="next" onclick="nextSlide()">❯</button>
 </div>
 
+<!-- ================= HERO ================= -->
 
+<section class="hero">
 
-	
-    <div class="hero-content">
-        <h3>Welcome to Dizz Henna Art</h3>
-        <p>
-We, Dizz Henna Artyour trusted mehndi artist serving Melur
-and Madurai. We specialize in exquisite, customizable henna 
-designs using 100% organic mehndi, perfect for weddings, special 
-occasions, and celebrations. Experience the beauty of tradition
-with a fresh, natural touch</p>
+  <div class="hero-image">
+    <img src="Images/yourimage.jpg" alt="Mehandi Design">
+  </div>
 
-<p>🌿 100% Organic Mehndi for safe and vibrant designs</p>
+  <div class="hero-content">
+    <h3>Welcome to Dizz Henna Art</h3>
+    <p>
+      We are your trusted mehndi artist serving Melur and Madurai.
+      We specialize in exquisite, customizable henna designs using
+      100% organic mehndi for weddings and special occasions.
+    </p>
 
-<p>📍 Serving Melur & Madurai with trusted local expertise</p>
-        </p>
-    </div>
+    <p>🌿 100% Organic Mehndi</p>
+    <p>📍 Serving Melur & Madurai</p>
+  </div>
+
 </section>
 
+<!-- ================= SERVICES ================= -->
 
 <section class="services">
-    <h3>Our Services</h3>
+  <h3>Our Services</h3>
 
-    <div class="service-box">
-        <img src="Arabic.webp">
-        <p>Arabic Mehandhi</p>
-    </div>
+  <div class="service-box">
+    <img src="Arabic.webp">
+    <p>Arabic Mehandhi</p>
+  </div>
 
-    <div class="service-box">
-        <img src="wedding.jpg">
-        <p>Wedding Mehandhi</p>
-    </div>
+  <div class="service-box">
+    <img src="wedding.jpg">
+    <p>Wedding Mehandhi</p>
+  </div>
 
-    <div class="service-box">
-        <img src="Party.jfif">
-        <p>Special Function Mehandhi</p>
-    </div>
+  <div class="service-box">
+    <img src="Party.jfif">
+    <p>Special Function Mehandhi</p>
+  </div>
+
 </section>
 
 
@@ -859,47 +775,30 @@ with a fresh, natural touch</p>
 
   </div>
 </footer>
+<!-- ================= SLIDER SCRIPT ================= -->
 
+<script>
+let index = 0;
+const slides = document.getElementById("slideContainer");
+const totalSlides = document.querySelectorAll(".slide").length;
 
-	<script>
-	let index = 0;
-let slides = document.getElementById("slideContainer");
-let totalSlides = 3;
-let direction = 1; // 1 = forward, -1 = backward
-
-function showSlide() {
-    slides.style.transform = "translateX(" + (-index * 100) + "%)";
+function showSlide(){
+  slides.style.transform = "translateX(-" + (index * 100) + "%)";
 }
 
-function nextSlide() {
-    if (index >= totalSlides - 1) {
-        direction = -1;
-    }
-    index += direction;
-    showSlide();
+function nextSlide(){
+  index = (index + 1) % totalSlides;
+  showSlide();
 }
 
-function prevSlide() {
-    if (index <= 0) {
-        direction = 1;
-    }
-    index += direction * -1;
-    showSlide();
+function prevSlide(){
+  index = (index - 1 + totalSlides) % totalSlides;
+  showSlide();
 }
 
-// Automatic Sliding (Left → Right → Left)
-setInterval(() => {
-    if (index >= totalSlides - 1) {
-        direction = -1;
-    }
-    if (index <= 0) {
-        direction = 1;
-    }
-    index += direction;
-    showSlide();
-}, 3000);
-	</script>
-
+/* Auto slide every 5 seconds */
+setInterval(nextSlide, 5000);
+</script>
 
 </body>
 </html>

@@ -83,6 +83,8 @@ header{
 
 /* ===== FULL SCREEN SLIDER ===== */
 
+/* ================= SLIDER ================= */
+
 .slider {
     position: relative;
     width: 100%;
@@ -90,8 +92,14 @@ header{
     overflow: hidden;
 }
 
+.slides {
+    display: flex;                /* VERY IMPORTANT */
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
 .slide {
-    min-width: 100%;
+    min-width: 100%;              /* Each slide full width */
     height: 500px;
 }
 

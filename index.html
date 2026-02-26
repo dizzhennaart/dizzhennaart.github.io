@@ -24,6 +24,15 @@ body{
     overflow-x: hidden;
 }
 
+	.email-link {
+  color: #f5e6d3;          /* Same as footer text */
+  text-decoration: none;   /* Remove underline */
+}
+
+.email-link:hover {
+  color: #d6b27c;          /* Hover color */
+}
+	
 /* ================= HEADER ================= */
 
 header{
@@ -390,29 +399,35 @@ header{
   color: #d6b27c;
 }
 
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .footer-socials span {
+  margin-right: 10px;
   font-size: 16px;
-  margin-right: 8px;
 }
 
 .footer-socials a {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   background: #d6b27c;
   color: #6f4a32;
   border-radius: 50%;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 6px;
-  transition: 0.3s;
+  font-size: 18px;
+  transition: 0.3s ease;
 }
 
 .footer-socials a:hover {
   background: #f5e6d3;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
-
+	
 /* DIVIDER */
 .footer-line {
   height: 1px;

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dizz Henna Art | Professional Mehandhi Artist</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background:#f5e6d3;
+  color:#4b2e1f;
+  overflow-x:hidden;
+}
+
+/* ================= HEADER ================= */
+
+.main-header{
+  background:#6f4e37;
+  color:#fff5e1;
+}
+
+/* Desktop Header */
+.desktop-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+}
+
+.logo{
+  height:50px;
+}
+
+.header-center{
+  text-align:center;
+}
+
+.header-center h1{
+  font-size:24px;
+}
+
+.header-center p{
+  font-size:14px;
+  margin-top:4px;
+}
+
+.header-right{
+  display:flex;
+  gap:20px;
+  font-size:14px;
+}
+
+/* Mobile Top Bar */
+.mobile-top{
+  display:none;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+  background:#6b4a2d;
+  padding:12px 40px;
+}
+
+.menu{
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+}
+
+.menu a{
+  color:#fff;
+  text-decoration:none;
+  font-size:18px;
+}
+
+/* ================= MOBILE MENU ================= */
+
+.mobile-menu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:100%;
+  height:100vh;
+  background:#6b4a2d;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  transition:0.4s ease;
+  z-index:9999;
+}
+
+.mobile-menu ul{
+  list-style:none;
+  text-align:center;
+}
+
+.mobile-menu ul li{
+  margin:25px 0;
+}
+
+.mobile-menu ul li a{
+  color:#fff5e1;
+  text-decoration:none;
+  font-size:22px;
+}
+
+.mobile-menu ul li a:hover{
+  color:#d6b27c;
+}
+
+.close-btn{
+  position:absolute;
+  top:25px;
+  right:25px;
+  font-size:28px;
+  color:#fff5e1;
+  cursor:pointer;
+}
+
+.hamburger{
+  font-size:24px;
+  color:#fff5e1;
+  cursor:pointer;
+}
+
+/* ================= SLIDER ================= */
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 600px;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(0,0,0,0.4);
+  padding:20px 30px;
+  border-radius:12px;
+  text-align:center;
+  color:#fff;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+  .desktop-header{
+    display:none;
+  }
+
+  .navbar{
+    display:none;
+  }
+
+  .mobile-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+  }
+
+  .slider{
+    height:350px;
+  }
+
+  .slide{
+    height:350px;
+  }
+
+  .banner-text h2{
+    font-size:22px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="main-header">
+
+  <!-- Mobile Top -->
+  <div class="mobile-top">
+    <img src="Images/logoo.png" class="logo">
+    <div class="hamburger" onclick="openMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+
+  <!-- Desktop Header -->
+  <div class="desktop-header">
+    <img src="Images/logoo.png" class="logo">
+
+    <div class="header-center">
+      <h1>Dizz Henna Art</h1>
+      <p>Mehandhi Artist | Melur & Madurai</p>
+    </div>
+
+    <div class="header-right">
+      <p><i class="fas fa-phone"></i> +91 81100 15288</p>
+      <p><i class="fas fa-map-marker-alt"></i> Melur & Madurai</p>
+    </div>
+  </div>
+
+</header>
+
+<!-- ================= NAVBAR (DESKTOP ONLY) ================= -->
+
+<nav class="navbar">
+  <ul class="menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ================= MOBILE MENU ================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+  <div class="close-btn" onclick="closeMenu()">
+    <i class="fas fa-times"></i>
+  </div>
+
+  <ul>
+    <li><a href="#" onclick="closeMenu()">Home</a></li>
+    <li><a href="#" onclick="closeMenu()">About</a></li>
+    <li><a href="#" onclick="closeMenu()">Services</a></li>
+    <li><a href="#" onclick="closeMenu()">Gallery</a></li>
+    <li><a href="#" onclick="closeMenu()">Contact</a></li>
+  </ul>
+
+</div>
+
+<!-- ================= SLIDER ================= -->
+
+<div class="slider">
+  <div class="slides" id="slideContainer">
+
+    <div class="slide">
+      <img src="cover_02.jpg">
+      <div class="banner-text">
+        <h2>Elegant Mehandhi Designs</h2>
+        <p>Arabic • Wedding • Special Functions</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="Images/coverimage02.png">
+    </div>
+
+    <div class="slide">
+      <img src="Images/coverimage03.png">
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+/* Slider */
+let index = 0;
+const slides = document.getElementById("slideContainer");
+const totalSlides = document.querySelectorAll(".slide").length;
+
+function showSlide(){
+  slides.style.transform = "translateX(-" + (index * 100) + "%)";
+}
+
+setInterval(function(){
+  index = (index + 1) % totalSlides;
+  showSlide();
+},5000);
+
+/* Mobile Menu */
+function openMenu(){
+  document.getElementById("mobileMenu").style.right="0";
+}
+
+function closeMenu(){
+  document.getElementById("mobileMenu").style.right="-100%";
+}
+
+</script>
+
+</body>
+</html>
